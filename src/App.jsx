@@ -2322,7 +2322,7 @@ const generateDemoDeeds = () => {
 };
 
 // Main App
-export default function GoodVibesApp() {
+export default function App() {
   // Load state from localStorage
   const [lang, setLang] = useState(() => {
     const saved = loadFromStorage(STORAGE_KEYS.SETTINGS, { lang: 'nl' });
@@ -2442,4 +2442,3 @@ export default function GoodVibesApp() {
     </LanguageContext.Provider>
   );
 }
-export default App;
