@@ -2442,4 +2442,4 @@ export default function GoodVibesApp() {
     </LanguageContext.Provider>
   );
 }
-
+export default App;
