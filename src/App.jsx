@@ -45,6 +45,13 @@ const translations = {
     cat_health: 'Gezondheid',
     cat_creativity: 'Creativiteit',
     cat_kindness: 'Vriendelijkheid',
+    cat_learning: 'Leren',
+    cat_family: 'Familie',
+    cat_work: 'Werk',
+    cat_mindfulness: 'Mindfulness',
+    cat_volunteer: 'Vrijwillig',
+    cat_finance: 'Financieel',
+    cat_pet: 'Huisdier',
     phase_begin: 'Begin',
     phase_growth: 'Groei',
     phase_bloom: 'Bloei',
@@ -102,6 +109,15 @@ const translations = {
     deedsThisMonth: 'daden deze maand',
     pointsThisWeek: 'punten deze week',
     pointsThisMonth: 'punten deze maand',
+    // All Deeds
+    allDeeds: 'Alle Daden',
+    totalEarned: 'Totaal verdiend',
+    noDeedsYet: 'Nog geen daden',
+    startJourney: 'Begin je reis door een goede daad toe te voegen!',
+    back: 'Terug',
+    filterAll: 'Alles',
+    sortNewest: 'Nieuwste eerst',
+    sortOldest: 'Oudste eerst',
     // Data
     resetData: 'Data wissen',
     resetConfirm: 'Weet je zeker dat je alle data wilt wissen?',
@@ -158,6 +174,13 @@ const translations = {
     cat_health: 'Health',
     cat_creativity: 'Creativity',
     cat_kindness: 'Kindness',
+    cat_learning: 'Learning',
+    cat_family: 'Family',
+    cat_work: 'Work',
+    cat_mindfulness: 'Mindfulness',
+    cat_volunteer: 'Volunteer',
+    cat_finance: 'Finance',
+    cat_pet: 'Pet Care',
     phase_begin: 'Beginning',
     phase_growth: 'Growth',
     phase_bloom: 'Bloom',
@@ -215,6 +238,15 @@ const translations = {
     deedsThisMonth: 'deeds this month',
     pointsThisWeek: 'points this week',
     pointsThisMonth: 'points this month',
+    // All Deeds
+    allDeeds: 'All Deeds',
+    totalEarned: 'Total earned',
+    noDeedsYet: 'No deeds yet',
+    startJourney: 'Start your journey by adding a good deed!',
+    back: 'Back',
+    filterAll: 'All',
+    sortNewest: 'Newest first',
+    sortOldest: 'Oldest first',
     // Data
     resetData: 'Reset data',
     resetConfirm: 'Are you sure you want to reset all data?',
@@ -344,6 +376,13 @@ const CATEGORIES = [
   { id: 'health', nameKey: 'cat_health', emoji: '💪', color: '#E8845F', defaultPoints: 2 },
   { id: 'creativity', nameKey: 'cat_creativity', emoji: '🎨', color: '#9B6DD9', defaultPoints: 2 },
   { id: 'kindness', nameKey: 'cat_kindness', emoji: '💝', color: '#D96D8C', defaultPoints: 1 },
+  { id: 'learning', nameKey: 'cat_learning', emoji: '📚', color: '#6366F1', defaultPoints: 2 },
+  { id: 'family', nameKey: 'cat_family', emoji: '👨‍👩‍👧‍👦', color: '#F59E0B', defaultPoints: 2 },
+  { id: 'work', nameKey: 'cat_work', emoji: '💼', color: '#64748B', defaultPoints: 2 },
+  { id: 'mindfulness', nameKey: 'cat_mindfulness', emoji: '🧘', color: '#14B8A6', defaultPoints: 2 },
+  { id: 'volunteer', nameKey: 'cat_volunteer', emoji: '🤝', color: '#EC4899', defaultPoints: 3 },
+  { id: 'finance', nameKey: 'cat_finance', emoji: '💰', color: '#22C55E', defaultPoints: 2 },
+  { id: 'pet', nameKey: 'cat_pet', emoji: '🐾', color: '#A78BFA', defaultPoints: 1 },
 ];
 
 const MOODS = ['😊', '🥰', '😌', '💪', '🌟', '🙏', '🎉', '🌈'];
@@ -1031,9 +1070,15 @@ const NaturalisticTree = ({ level, size = 'large' }) => {
 // ONBOARDING SCREEN
 // ============================================
 
-const OnboardingScreen = ({ onComplete }) => {
-  const t = useTranslation();
+const OnboardingScreen = ({ onComplete, initialLang, onLangChange }) => {
+  const [lang, setLang] = useState(initialLang || 'en');
+  const t = (key) => translations[lang][key] || translations['en'][key] || key;
   const [step, setStep] = useState(0);
+  
+  const handleLangChange = (newLang) => {
+    setLang(newLang);
+    onLangChange(newLang);
+  };
   
   const steps = [
     { title: t('onboardingStep1Title'), desc: t('onboardingStep1Desc'), emoji: '💚', level: 1 },
@@ -1046,8 +1091,31 @@ const OnboardingScreen = ({ onComplete }) => {
   const isLastStep = step === steps.length - 1;
   
   return (
-    <div className="fixed inset-0 bg-gradient-to-b from-emerald-400 to-teal-500 z-50 flex flex-col">
-      <div className="flex justify-end p-3 sm:p-4">
+    <div className="fixed inset-0 bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-500 z-50 flex flex-col">
+      {/* Decorative elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+        <div className="absolute top-40 right-0 w-48 h-48 bg-yellow-300/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-40 left-0 w-40 h-40 bg-pink-300/10 rounded-full blur-2xl" />
+        <div className="absolute bottom-20 right-10 w-36 h-36 bg-white/10 rounded-full blur-2xl" />
+      </div>
+      
+      <div className="relative flex justify-between items-center p-3 sm:p-4">
+        {/* Language selector */}
+        <div className="flex gap-1.5">
+          <button 
+            onClick={() => handleLangChange('en')} 
+            className={`px-2.5 py-1 rounded-lg text-xs sm:text-sm font-medium transition-all ${lang === 'en' ? 'bg-white text-emerald-600' : 'bg-white/20 text-white'}`}
+          >
+            🇬🇧 EN
+          </button>
+          <button 
+            onClick={() => handleLangChange('nl')} 
+            className={`px-2.5 py-1 rounded-lg text-xs sm:text-sm font-medium transition-all ${lang === 'nl' ? 'bg-white text-emerald-600' : 'bg-white/20 text-white'}`}
+          >
+            🇳🇱 NL
+          </button>
+        </div>
         <button onClick={onComplete} className="text-white/70 text-xs sm:text-sm font-medium">{t('skip')}</button>
       </div>
       <div className="flex-1 flex flex-col items-center justify-center px-6 sm:px-8">
@@ -1123,7 +1191,7 @@ const LevelUpModal = ({ stage, onClose }) => {
 // WEEKLY/MONTHLY STATISTICS
 // ============================================
 
-const WeeklyMonthlyStats = ({ deeds }) => {
+const WeeklyMonthlyStats = ({ deeds, onClick }) => {
   const t = useTranslation();
   
   const now = new Date();
@@ -1147,9 +1215,10 @@ const WeeklyMonthlyStats = ({ deeds }) => {
   const weekProgress = Math.min((weekDays / 7) * 100, 100);
   
   return (
-    <div className="bg-white rounded-2xl p-3 sm:p-4 shadow-sm border border-gray-100">
-      <h3 className="text-xs sm:text-sm font-bold text-gray-800 mb-2 sm:mb-3 flex items-center gap-1.5">
-        📊 {t('statistics')}
+    <button onClick={onClick} className="w-full bg-white rounded-2xl p-3 sm:p-4 shadow-sm border border-gray-100 text-left hover:shadow-md transition-shadow active:scale-[0.99]">
+      <h3 className="text-xs sm:text-sm font-bold text-gray-800 mb-2 sm:mb-3 flex items-center justify-between">
+        <span className="flex items-center gap-1.5">📊 {t('statistics')}</span>
+        <span className="text-gray-400 text-[10px] sm:text-xs font-normal">→ {t('allDeeds')}</span>
       </h3>
       
       <div className="grid grid-cols-2 gap-2 sm:gap-3">
@@ -1206,6 +1275,193 @@ const WeeklyMonthlyStats = ({ deeds }) => {
             </div>
           </div>
         </div>
+      </div>
+    </button>
+  );
+};
+
+// ============================================
+// ALL DEEDS SCREEN
+// ============================================
+
+const AllDeedsScreen = ({ deeds, onClose }) => {
+  const t = useTranslation();
+  const { lang } = useContext(LanguageContext);
+  const [filter, setFilter] = useState('all');
+  const [sortOrder, setSortOrder] = useState('newest');
+  
+  const totalPoints = deeds.reduce((sum, d) => sum + d.points, 0);
+  
+  // Filter deeds
+  const filteredDeeds = filter === 'all' 
+    ? deeds 
+    : deeds.filter(d => d.category === filter);
+  
+  // Sort deeds
+  const sortedDeeds = [...filteredDeeds].sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    if (sortOrder === 'newest') {
+      return dateB - dateA || b.id - a.id;
+    }
+    return dateA - dateB || a.id - b.id;
+  });
+  
+  // Group by date
+  const groupedDeeds = sortedDeeds.reduce((groups, deed) => {
+    const date = deed.date;
+    if (!groups[date]) groups[date] = [];
+    groups[date].push(deed);
+    return groups;
+  }, {});
+  
+  const formatDate = (dateStr) => {
+    const date = new Date(dateStr);
+    const today = new Date();
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+    
+    if (date.toDateString() === today.toDateString()) {
+      return lang === 'nl' ? 'Vandaag' : 'Today';
+    }
+    if (date.toDateString() === yesterday.toDateString()) {
+      return lang === 'nl' ? 'Gisteren' : 'Yesterday';
+    }
+    return date.toLocaleDateString(lang === 'nl' ? 'nl-NL' : 'en-US', { 
+      weekday: 'long', 
+      day: 'numeric', 
+      month: 'long' 
+    });
+  };
+
+  return (
+    <div className="fixed inset-0 bg-gradient-to-br from-amber-50 via-rose-50 to-teal-50 z-50 overflow-y-auto">
+      {/* Decorative background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 right-0 w-64 h-64 bg-gradient-to-bl from-emerald-200/40 to-teal-200/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-0 w-72 h-72 bg-gradient-to-tr from-pink-200/30 to-orange-200/20 rounded-full blur-3xl" />
+      </div>
+      
+      <div className="relative max-w-md mx-auto px-3 sm:px-4 pt-3 sm:pt-4 pb-6">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-4">
+          <button 
+            onClick={onClose}
+            className="w-9 h-9 sm:w-10 sm:h-10 bg-white rounded-xl flex items-center justify-center shadow-sm border border-gray-100"
+          >
+            <span className="text-gray-600">←</span>
+          </button>
+          <h1 className="text-lg sm:text-xl font-bold text-gray-800">📋 {t('allDeeds')}</h1>
+          <div className="w-9 h-9 sm:w-10 sm:h-10" /> {/* Spacer */}
+        </div>
+        
+        {/* Summary */}
+        <div className="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl p-4 mb-4 text-white">
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="text-emerald-100 text-xs sm:text-sm">{t('totalDeeds')}</p>
+              <p className="text-2xl sm:text-3xl font-bold">{deeds.length}</p>
+            </div>
+            <div className="text-right">
+              <p className="text-emerald-100 text-xs sm:text-sm">{t('totalEarned')}</p>
+              <p className="text-2xl sm:text-3xl font-bold">+{totalPoints}</p>
+            </div>
+          </div>
+        </div>
+        
+        {/* Filters */}
+        <div className="mb-4">
+          <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+            <button
+              onClick={() => setFilter('all')}
+              className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap transition-all ${
+                filter === 'all' 
+                  ? 'bg-emerald-500 text-white' 
+                  : 'bg-white text-gray-600 border border-gray-200'
+              }`}
+            >
+              {t('filterAll')} ({deeds.length})
+            </button>
+            {CATEGORIES.map(cat => {
+              const count = deeds.filter(d => d.category === cat.id).length;
+              if (count === 0) return null;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setFilter(cat.id)}
+                  className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap transition-all flex items-center gap-1 ${
+                    filter === cat.id 
+                      ? 'text-white' 
+                      : 'bg-white text-gray-600 border border-gray-200'
+                  }`}
+                  style={filter === cat.id ? { backgroundColor: cat.color } : {}}
+                >
+                  <span>{cat.emoji}</span>
+                  <span>{count}</span>
+                </button>
+              );
+            })}
+          </div>
+          
+          {/* Sort toggle */}
+          <button
+            onClick={() => setSortOrder(s => s === 'newest' ? 'oldest' : 'newest')}
+            className="text-xs text-gray-500 mt-2 flex items-center gap-1"
+          >
+            <span>↕️</span>
+            <span>{sortOrder === 'newest' ? t('sortNewest') : t('sortOldest')}</span>
+          </button>
+        </div>
+        
+        {/* Deeds list */}
+        {deeds.length === 0 ? (
+          <div className="bg-white rounded-2xl p-6 text-center border border-gray-100">
+            <span className="text-4xl mb-3 block">🌱</span>
+            <p className="text-gray-600 font-medium">{t('noDeedsYet')}</p>
+            <p className="text-gray-400 text-sm mt-1">{t('startJourney')}</p>
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {Object.entries(groupedDeeds).map(([date, dateDeeds]) => (
+              <div key={date}>
+                <h3 className="text-xs sm:text-sm font-semibold text-gray-500 mb-2 px-1">
+                  {formatDate(date)} · {dateDeeds.reduce((sum, d) => sum + d.points, 0)} {t('points')}
+                </h3>
+                <div className="space-y-2">
+                  {dateDeeds.map(deed => {
+                    const cat = CATEGORIES.find(c => c.id === deed.category);
+                    return (
+                      <div 
+                        key={deed.id} 
+                        className="bg-white rounded-xl p-3 flex items-center gap-3 border border-gray-100 shadow-sm"
+                      >
+                        <div 
+                          className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center text-xl flex-shrink-0" 
+                          style={{ backgroundColor: cat?.color + '20' }}
+                        >
+                          {cat?.emoji}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-gray-800 font-medium text-sm truncate">{deed.action}</p>
+                          <p className="text-gray-400 text-xs">{t(cat?.nameKey)}</p>
+                        </div>
+                        <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                          <span 
+                            className="text-xs font-bold px-2 py-1 rounded-lg text-white" 
+                            style={{ backgroundColor: cat?.color }}
+                          >
+                            +{deed.points}
+                          </span>
+                          {deed.mood && <span className="text-sm">{deed.mood}</span>}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -1298,11 +1554,16 @@ const LanguageToggle = ({ lang, setLang }) => (
 const HomeScreen = ({ deeds, totalPoints, stage, nextStage, streak }) => {
   const t = useTranslation();
   const { lang, setLang } = useContext(LanguageContext);
+  const [showAllDeeds, setShowAllDeeds] = useState(false);
   const today = new Date().toDateString();
   const todayDeeds = deeds.filter(d => d.date === today);
   const todayPoints = todayDeeds.reduce((sum, d) => sum + d.points, 0);
   const phase = PHASES[stage.phase];
   const progress = getProgress(totalPoints);
+
+  if (showAllDeeds) {
+    return <AllDeedsScreen deeds={deeds} onClose={() => setShowAllDeeds(false)} />;
+  }
 
   return (
     <div className="px-3 sm:px-4 pt-4 sm:pt-6 pb-28 sm:pb-32">
@@ -1327,9 +1588,9 @@ const HomeScreen = ({ deeds, totalPoints, stage, nextStage, streak }) => {
         <StreakDisplay streak={streak} />
       </div>
 
-      {/* Weekly/Monthly Stats */}
+      {/* Weekly/Monthly Stats - clickable */}
       <div className="mb-3 sm:mb-4">
-        <WeeklyMonthlyStats deeds={deeds} />
+        <WeeklyMonthlyStats deeds={deeds} onClick={() => setShowAllDeeds(true)} />
       </div>
 
       <div className="bg-white rounded-2xl p-2.5 sm:p-3 mb-3 sm:mb-4 shadow-sm border border-gray-100">
@@ -2236,8 +2497,14 @@ const AddDeedScreen = ({ onSave, onClose, nextStage, pointsToNext }) => {
   const [mood, setMood] = useState('😊');
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-b from-sky-50 to-teal-50 z-50 overflow-y-auto">
-      <div className="max-w-md mx-auto px-3 sm:px-4 pt-3 sm:pt-4 pb-6">
+    <div className="fixed inset-0 bg-gradient-to-br from-amber-50 via-rose-50 to-teal-100 z-50 overflow-y-auto">
+      {/* Decorative background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 right-0 w-64 h-64 bg-gradient-to-bl from-emerald-200/40 to-teal-200/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-0 w-72 h-72 bg-gradient-to-tr from-pink-200/30 to-orange-200/20 rounded-full blur-3xl" />
+      </div>
+      
+      <div className="relative max-w-md mx-auto px-3 sm:px-4 pt-3 sm:pt-4 pb-6">
         <div className="flex items-center justify-between mb-3 sm:mb-4">
           <button onClick={onClose} className="w-9 h-9 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center text-gray-400 shadow-sm text-sm sm:text-base">✕</button>
           <h1 className="text-base sm:text-lg font-bold text-gray-800">✨ {t('newDeed')}</h1>
@@ -2262,11 +2529,11 @@ const AddDeedScreen = ({ onSave, onClose, nextStage, pointsToNext }) => {
 
         <div className="mb-3 sm:mb-4">
           <label className="block text-xs sm:text-sm font-medium text-gray-600 mb-1">{t('category')}</label>
-          <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
+          <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
             {CATEGORIES.map(cat => (
-              <button key={cat.id} onClick={() => { setSelectedCategory(cat); setPoints(cat.defaultPoints); }} className={`p-2 sm:p-3 rounded-xl border-2 transition-all ${selectedCategory?.id === cat.id ? 'border-emerald-400 bg-emerald-50 scale-105' : 'border-gray-100 bg-white'}`}>
-                <span className="text-xl sm:text-2xl block mb-0.5 sm:mb-1">{cat.emoji}</span>
-                <span className="text-[10px] sm:text-xs font-medium text-gray-700">{t(cat.nameKey)}</span>
+              <button key={cat.id} onClick={() => { setSelectedCategory(cat); setPoints(cat.defaultPoints); }} className={`p-1.5 sm:p-2 rounded-xl border-2 transition-all ${selectedCategory?.id === cat.id ? 'border-emerald-400 bg-emerald-50 scale-105' : 'border-gray-100 bg-white'}`}>
+                <span className="text-lg sm:text-xl block">{cat.emoji}</span>
+                <span className="text-[8px] sm:text-[10px] font-medium text-gray-700 leading-tight block truncate">{t(cat.nameKey)}</span>
               </button>
             ))}
           </div>
@@ -2325,14 +2592,14 @@ const generateDemoDeeds = () => {
 export default function App() {
   // Load state from localStorage
   const [lang, setLang] = useState(() => {
-    const saved = loadFromStorage(STORAGE_KEYS.SETTINGS, { lang: 'nl' });
-    return saved.lang || 'nl';
+    const saved = loadFromStorage(STORAGE_KEYS.SETTINGS, { lang: 'en' });
+    return saved.lang || 'en';
   });
   const [activeTab, setActiveTab] = useState('home');
   const [showAddDeed, setShowAddDeed] = useState(false);
   const [deeds, setDeeds] = useState(() => loadFromStorage(STORAGE_KEYS.DEEDS, []));
   const [settings, setSettings] = useState(() => loadFromStorage(STORAGE_KEYS.SETTINGS, {
-    lang: 'nl',
+    lang: 'en',
     notificationsEnabled: false,
     notificationTime: '20:00',
   }));
@@ -2402,6 +2669,11 @@ export default function App() {
     saveToStorage(STORAGE_KEYS.ONBOARDING, true);
   };
 
+  const handleOnboardingLangChange = (newLang) => {
+    setLang(newLang);
+    saveToStorage(STORAGE_KEYS.SETTINGS, { ...settings, lang: newLang });
+  };
+
   const handleResetData = () => {
     setDeeds([]);
     setLastLevel(1);
@@ -2415,15 +2687,25 @@ export default function App() {
   // Show onboarding for new users
   if (showOnboarding) {
     return (
-      <LanguageContext.Provider value={{ lang, setLang }}>
-        <OnboardingScreen onComplete={handleOnboardingComplete} />
-      </LanguageContext.Provider>
+      <OnboardingScreen 
+        onComplete={handleOnboardingComplete} 
+        initialLang={lang}
+        onLangChange={handleOnboardingLangChange}
+      />
     );
   }
 
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
-      <div className="min-h-screen bg-gradient-to-b from-sky-50 via-white to-emerald-50">
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-rose-50 to-teal-50">
+        {/* Decorative background elements */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-yellow-200/30 to-orange-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute top-1/4 right-0 w-96 h-96 bg-gradient-to-bl from-pink-200/25 to-rose-200/20 rounded-full blur-3xl translate-x-1/3" />
+          <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-gradient-to-tr from-emerald-200/25 to-teal-200/20 rounded-full blur-3xl -translate-x-1/4" />
+          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-to-tl from-purple-200/20 to-indigo-200/15 rounded-full blur-3xl translate-y-1/3" />
+        </div>
+        
         {/* Mobile-first container with max-width for larger screens */}
         <div className="max-w-md mx-auto relative min-h-screen">
           {activeTab === 'home' && <HomeScreen deeds={deeds} totalPoints={totalPoints} stage={stage} nextStage={nextStage} streak={streak} />}
