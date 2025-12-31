@@ -2443,4 +2443,3 @@ export default function GoodVibesApp() {
   );
 }
 
-export default App;
