@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Safe area for iOS notch */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
