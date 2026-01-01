@@ -152,14 +152,14 @@ const translations = {
     toast_streak7: 'Week streak! 💪',
     toast_streak30: 'Maand streak! 🌟',
     toast_streak100: '100 dagen! Legende! 🏆',
-    toast_motivational1: 'Je doet het geweldig! 🌟',
-    toast_motivational2: 'Elke kleine stap telt! 💚',
-    toast_motivational3: 'Blijf groeien! 🌳',
-    toast_motivational4: 'Je maakt een verschil! ✨',
-    toast_motivational5: 'Fantastisch werk! 🎉',
-    toast_motivational6: 'Je boom wordt sterker! 💪',
-    toast_motivational7: 'Geweldige voortgang! 🌱',
-    toast_motivational8: 'Ga zo door! ⭐',
+    toast_motivational1: 'Kleine daden, grote impact! 💫',
+    toast_motivational2: 'Volhouden loont! 🎯',
+    toast_motivational3: 'Je inspireert anderen! ✨',
+    toast_motivational4: 'Je bent op de goede weg! 🛤️',
+    toast_motivational5: 'De wereld wordt mooier door jou! 🌍',
+    toast_motivational6: 'Consistentie is de sleutel! 🔑',
+    toast_motivational7: 'Positieve energie verspreiden! 🌈',
+    toast_motivational8: 'Elke dag telt mee! 📅',
   },
   en: {
     appName: 'GoodVibes',
@@ -308,14 +308,14 @@ const translations = {
     toast_streak7: 'Week streak! 💪',
     toast_streak30: 'Month streak! 🌟',
     toast_streak100: '100 days! Legend! 🏆',
-    toast_motivational1: 'You\'re doing great! 🌟',
-    toast_motivational2: 'Every small step counts! 💚',
-    toast_motivational3: 'Keep growing! 🌳',
-    toast_motivational4: 'You\'re making a difference! ✨',
-    toast_motivational5: 'Fantastic work! 🎉',
-    toast_motivational6: 'Your tree is getting stronger! 💪',
-    toast_motivational7: 'Great progress! 🌱',
-    toast_motivational8: 'Keep it up! ⭐',
+    toast_motivational1: 'Small deeds, big impact! 💫',
+    toast_motivational2: 'Persistence pays off! 🎯',
+    toast_motivational3: 'You inspire others! ✨',
+    toast_motivational4: 'You\'re on the right track! 🛤️',
+    toast_motivational5: 'The world is more beautiful because of you! 🌍',
+    toast_motivational6: 'Consistency is the key! 🔑',
+    toast_motivational7: 'Spreading positive energy! 🌈',
+    toast_motivational8: 'Every day matters! 📅',
   }
 };
 
@@ -2956,22 +2956,22 @@ export default function App() {
 
   const handleAddDeed = (deed) => {
     setDeeds(prev => [...prev, deed]);
-    // Show toast when deed is added
-    showToast('toast_deedAdded', '🌱');
-    
-    // Randomly show motivational toast (30% chance)
-    if (Math.random() < 0.3) {
+    // 50% motivational message, 30% "Good deed added", 20% no message
+    const random = Math.random();
+    if (random < 0.5) {
+      // 50% chance: Show motivational toast
       const motivationalKeys = [
         'toast_motivational1', 'toast_motivational2', 'toast_motivational3',
         'toast_motivational4', 'toast_motivational5', 'toast_motivational6',
         'toast_motivational7', 'toast_motivational8'
       ];
       const randomKey = motivationalKeys[Math.floor(Math.random() * motivationalKeys.length)];
-      // Show motivational toast after a short delay
-      setTimeout(() => {
-        showToast(randomKey);
-      }, 1500);
+      showToast(randomKey);
+    } else if (random < 0.8) {
+      // 30% chance: Show "Good deed added" message
+      showToast('toast_deedAdded', '🌱');
     }
+    // 20% chance: No message shown (do nothing)
   };
 
   // Show onboarding for new users
