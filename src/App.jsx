@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect, useCallback, createContext, useContext } from 'react';
+import TreeIllustration from './components/TreeIllustration';
 
 // ============================================
 // LANGUAGE SYSTEM
@@ -3080,9 +3081,7 @@ const AnimatedTreeScene = ({ level, weather }) => {
           transition: 'filter 0.5s ease',
         }}
       >
-        <svg viewBox="0 0 300 260" className="w-full h-full" style={{ overflow: 'visible' }}>
-          {renderTree()}
-        </svg>
+        <TreeIllustration level={level} weather={weather} />
       </div>
       
       {/* Level badge */}
