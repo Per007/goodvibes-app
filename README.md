@@ -5,9 +5,10 @@ Een app om je persoonlijke groei bij te houden door goede daden te doen. Kijk to
 ## ✨ Features
 
 - **16 Boom Levels** - Van zaadje tot kosmische boom
-- **5 Categorieën** - Sociaal, Milieu, Gezondheid, Creativiteit, Vriendelijkheid
+- **11 Categorieën** - Sociaal, Milieu, Gezondheid, Creativiteit, Vriendelijkheid, Leren, Familie, Werk, Mindfulness, Vrijwillig, Financieel, Huisdier
 - **Weer Systeem** - Dynamisch weer dat je boom beïnvloedt
 - **Streak Tracking** - Houd je dagelijkse streak bij
+- **Toast Notificaties** - Motiverende berichten bij mijlpalen en goede daden (NL/EN)
 - **Wekelijks/Maandelijks Overzicht** - Bekijk je voortgang
 - **Tweetalig** - Nederlands en Engels
 - **Responsive** - Werkt perfect op mobiel en desktop
