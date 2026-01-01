@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect, useCallback, createContext, useContext } from 'react';
 import TreeIllustration from './components/TreeIllustration';
+import { playSuccessSound, playLevelUpSound } from './utils/sounds';
 
 // ============================================
 // LANGUAGE SYSTEM
@@ -4273,6 +4274,9 @@ export default function App() {
   // Level up check
   useEffect(() => {
     if (stage.level > lastLevel) {
+      // Speel level-up fanfare
+      playLevelUpSound();
+      
       setShowLevelUp(true);
       setLastLevel(stage.level);
       saveToStorage(STORAGE_KEYS.LAST_LEVEL, stage.level);
@@ -4424,6 +4428,9 @@ export default function App() {
   };
 
   const handleAddDeed = (deed) => {
+    // Speel success jingle
+    playSuccessSound();
+    
     setDeeds(prev => [...prev, deed]);
     // 50% motivational message, 30% "Good deed added", 20% no message
     const random = Math.random();
