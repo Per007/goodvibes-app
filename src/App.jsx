@@ -145,6 +145,21 @@ const translations = {
     messageSent: 'Bericht verzonden!',
     messageError: 'Er ging iets mis. Probeer het opnieuw.',
     close: 'Sluiten',
+    // Toast messages
+    toast_deedAdded: 'Goede daad toegevoegd! 🌱',
+    toast_levelUp: 'Level omhoog! 🎉',
+    toast_streak3: '3 dagen streak! 🔥',
+    toast_streak7: 'Week streak! 💪',
+    toast_streak30: 'Maand streak! 🌟',
+    toast_streak100: '100 dagen! Legende! 🏆',
+    toast_motivational1: 'Je doet het geweldig! 🌟',
+    toast_motivational2: 'Elke kleine stap telt! 💚',
+    toast_motivational3: 'Blijf groeien! 🌳',
+    toast_motivational4: 'Je maakt een verschil! ✨',
+    toast_motivational5: 'Fantastisch werk! 🎉',
+    toast_motivational6: 'Je boom wordt sterker! 💪',
+    toast_motivational7: 'Geweldige voortgang! 🌱',
+    toast_motivational8: 'Ga zo door! ⭐',
   },
   en: {
     appName: 'GoodVibes',
@@ -519,15 +534,23 @@ const shouldSendNotification = (notificationTime, lastNotificationDate) => {
   const targetTime = new Date();
   targetTime.setHours(hours, minutes, 0, 0);
   
-  // Check if we're within 1 minute of the target time
-  const timeDiff = Math.abs(now - targetTime);
-  const oneMinute = 60 * 1000;
-  
-  // Also check if we haven't sent a notification today yet
+  // Check if we haven't sent a notification today yet
   const today = now.toDateString();
   const lastNotification = lastNotificationDate ? new Date(lastNotificationDate).toDateString() : null;
   
-  return timeDiff < oneMinute && today !== lastNotification;
+  // If we already sent a notification today, don't send another
+  if (today === lastNotification) {
+    return false;
+  }
+  
+  // Check if current time has passed the notification time (with a 5-minute window)
+  // This allows the notification to be sent even if the check runs slightly after the target time
+  const timeDiff = now - targetTime;
+  const fiveMinutes = 5 * 60 * 1000; // 5 minutes in milliseconds
+  
+  // Send notification if we're past the target time but within 5 minutes
+  // This ensures we catch the notification even if the check runs a bit late
+  return timeDiff >= 0 && timeDiff <= fiveMinutes;
 };
 
 // ============================================
@@ -2559,9 +2582,17 @@ const ProfileScreen = ({ totalPoints, deeds, stage, settings, setSettings, onRes
 
   const handleNotificationToggle = async () => {
     if (!settings.notificationsEnabled) {
+      // Request permission when enabling notifications
       const granted = await requestNotificationPermission();
-      if (granted) setSettings({ ...settings, notificationsEnabled: true });
+      if (granted) {
+        setSettings({ ...settings, notificationsEnabled: true });
+      } else {
+        // Permission was denied or not available
+        // Keep notifications disabled
+        setSettings({ ...settings, notificationsEnabled: false });
+      }
     } else {
+      // Disable notifications
       setSettings({ ...settings, notificationsEnabled: false });
     }
   };
@@ -2865,13 +2896,33 @@ export default function App() {
   // Notification scheduler - checks every minute if it's time to send a notification
   useEffect(() => {
     if (!settings.notificationsEnabled) return;
+    
+    // Check if notifications are supported and permission is granted
+    if (!('Notification' in window)) {
+      console.warn('Notifications are not supported in this browser');
+      return;
+    }
+    
+    if (Notification.permission !== 'granted') {
+      console.warn('Notification permission not granted');
+      return;
+    }
 
     const checkAndSendNotification = () => {
+      // Double-check permission before sending
+      if (Notification.permission !== 'granted') {
+        return;
+      }
+      
       if (shouldSendNotification(settings.notificationTime, lastNotificationDate)) {
-        sendNotification(lang);
-        const now = new Date().toISOString();
-        setLastNotificationDate(now);
-        saveToStorage(STORAGE_KEYS.LAST_NOTIFICATION, now);
+        try {
+          sendNotification(lang);
+          const now = new Date().toISOString();
+          setLastNotificationDate(now);
+          saveToStorage(STORAGE_KEYS.LAST_NOTIFICATION, now);
+        } catch (error) {
+          console.error('Error in notification scheduler:', error);
+        }
       }
     };
 
