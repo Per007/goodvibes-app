@@ -133,6 +133,18 @@ const translations = {
     weather_hot: 'Hittegolf',
     weather_foggy: 'Mistig',
     weather_change: 'Het weer verandert...',
+    // Contact/Message
+    contact: 'Contact',
+    sendMessage: 'Stuur bericht',
+    contactUs: 'Neem contact op',
+    yourName: 'Jouw naam',
+    yourEmail: 'Jouw e-mail',
+    message: 'Bericht',
+    messagePlaceholder: 'Typ je bericht hier...',
+    send: 'Verzenden',
+    messageSent: 'Bericht verzonden!',
+    messageError: 'Er ging iets mis. Probeer het opnieuw.',
+    close: 'Sluiten',
   },
   en: {
     appName: 'GoodVibes',
@@ -262,6 +274,33 @@ const translations = {
     weather_hot: 'Heat wave',
     weather_foggy: 'Foggy',
     weather_change: 'Weather is changing...',
+    // Contact/Message
+    contact: 'Contact',
+    sendMessage: 'Send message',
+    contactUs: 'Contact us',
+    yourName: 'Your name',
+    yourEmail: 'Your email',
+    message: 'Message',
+    messagePlaceholder: 'Type your message here...',
+    send: 'Send',
+    messageSent: 'Message sent!',
+    messageError: 'Something went wrong. Please try again.',
+    close: 'Close',
+    // Toast messages
+    toast_deedAdded: 'Good deed added! 🌱',
+    toast_levelUp: 'Level up! 🎉',
+    toast_streak3: '3 day streak! 🔥',
+    toast_streak7: 'Week streak! 💪',
+    toast_streak30: 'Month streak! 🌟',
+    toast_streak100: '100 days! Legend! 🏆',
+    toast_motivational1: 'You\'re doing great! 🌟',
+    toast_motivational2: 'Every small step counts! 💚',
+    toast_motivational3: 'Keep growing! 🌳',
+    toast_motivational4: 'You\'re making a difference! ✨',
+    toast_motivational5: 'Fantastic work! 🎉',
+    toast_motivational6: 'Your tree is getting stronger! 💪',
+    toast_motivational7: 'Great progress! 🌱',
+    toast_motivational8: 'Keep it up! ⭐',
   }
 };
 
@@ -269,6 +308,78 @@ const LanguageContext = createContext();
 const useTranslation = () => {
   const { lang } = useContext(LanguageContext);
   return (key) => translations[lang][key] || key;
+};
+
+// ============================================
+// TOAST NOTIFICATION SYSTEM
+// ============================================
+
+const ToastContext = createContext();
+
+// Toast component - displays a single toast message
+const Toast = ({ message, onClose, id }) => {
+  useEffect(() => {
+    // Auto-close after 3 seconds
+    const timer = setTimeout(() => {
+      onClose(id);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [id, onClose]);
+
+  return (
+    <div className="animate-slide-in-right max-w-sm w-full">
+      <div className="bg-white rounded-xl shadow-lg border-2 border-emerald-200 px-4 py-3 flex items-center gap-3 animate-fade-in">
+        <div className="flex-shrink-0 text-2xl">{message.emoji || '🌱'}</div>
+        <div className="flex-1">
+          <p className="text-sm font-semibold text-gray-800">{message.text}</p>
+        </div>
+        <button
+          onClick={() => onClose(id)}
+          className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors text-lg leading-none"
+          aria-label="Close"
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+  );
+};
+
+// Toast container - manages multiple toasts
+const ToastContainer = ({ toasts, removeToast }) => {
+  if (toasts.length === 0) return null;
+  
+  return (
+    <div className="fixed top-4 right-2 sm:right-4 z-50 space-y-2 pointer-events-none max-w-[calc(100%-1rem)] sm:max-w-sm">
+      {toasts.map((toast) => (
+        <div key={toast.id} className="pointer-events-auto">
+          <Toast message={toast} onClose={removeToast} id={toast.id} />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+// Hook to use toast functionality
+const useToast = (lang) => {
+  const [toasts, setToasts] = useState([]);
+
+  const showToast = (messageKey, emoji = null) => {
+    const text = translations[lang][messageKey] || messageKey;
+    const newToast = {
+      id: Date.now() + Math.random(),
+      text,
+      emoji: emoji || '🌱',
+    };
+    
+    setToasts((prev) => [...prev, newToast]);
+  };
+
+  const removeToast = (id) => {
+    setToasts((prev) => prev.filter((toast) => toast.id !== id));
+  };
+
+  return { toasts, showToast, removeToast };
 };
 
 // ============================================
@@ -281,6 +392,7 @@ const STORAGE_KEYS = {
   STREAK: 'goodvibes_streak',
   ONBOARDING: 'goodvibes_onboarding_complete',
   LAST_LEVEL: 'goodvibes_last_level',
+  LAST_NOTIFICATION: 'goodvibes_last_notification',
 };
 
 const loadFromStorage = (key, defaultValue) => {
@@ -364,6 +476,58 @@ const requestNotificationPermission = async () => {
     return permission === 'granted';
   }
   return false;
+};
+
+// Send a notification with a motivational message
+const sendNotification = (lang) => {
+  if (!('Notification' in window) || Notification.permission !== 'granted') {
+    return;
+  }
+
+  const messages = {
+    nl: {
+      title: '🌱 GoodVibes Herinnering',
+      body: 'Tijd voor een goede daad! Laat je boom groeien 🌳',
+    },
+    en: {
+      title: '🌱 GoodVibes Reminder',
+      body: 'Time for a good deed! Help your tree grow 🌳',
+    },
+  };
+
+  const message = messages[lang] || messages.en;
+
+  try {
+    new Notification(message.title, {
+      body: message.body,
+      icon: '/favicon.svg',
+      badge: '/favicon.svg',
+      tag: 'goodvibes-daily-reminder', // Prevents duplicate notifications
+      requireInteraction: false,
+    });
+  } catch (error) {
+    console.error('Error showing notification:', error);
+  }
+};
+
+// Check if it's time to send notification
+const shouldSendNotification = (notificationTime, lastNotificationDate) => {
+  const now = new Date();
+  const [hours, minutes] = notificationTime.split(':').map(Number);
+  
+  // Create target time for today
+  const targetTime = new Date();
+  targetTime.setHours(hours, minutes, 0, 0);
+  
+  // Check if we're within 1 minute of the target time
+  const timeDiff = Math.abs(now - targetTime);
+  const oneMinute = 60 * 1000;
+  
+  // Also check if we haven't sent a notification today yet
+  const today = now.toDateString();
+  const lastNotification = lastNotificationDate ? new Date(lastNotificationDate).toDateString() : null;
+  
+  return timeDiff < oneMinute && today !== lastNotification;
 };
 
 // ============================================
@@ -2606,10 +2770,21 @@ export default function App() {
   const [showOnboarding, setShowOnboarding] = useState(() => !loadFromStorage(STORAGE_KEYS.ONBOARDING, false));
   const [showLevelUp, setShowLevelUp] = useState(false);
   const [lastLevel, setLastLevel] = useState(() => loadFromStorage(STORAGE_KEYS.LAST_LEVEL, 1));
+  const [lastNotificationDate, setLastNotificationDate] = useState(() => 
+    loadFromStorage(STORAGE_KEYS.LAST_NOTIFICATION, null)
+  );
   
   // Weather system state
   const [weather, setWeather] = useState(() => WEATHER_TYPES[0]); // Start sunny
   const [showWeatherChange, setShowWeatherChange] = useState(false);
+
+  // Toast system
+  const { toasts, showToast, removeToast } = useToast(lang);
+  const [previousStreak, setPreviousStreak] = useState(() => {
+    // Initialize with current streak to avoid false triggers on first load
+    const initialStreak = calculateStreak(deeds);
+    return initialStreak.current;
+  });
 
   // Computed values
   const totalPoints = useMemo(() => deeds.reduce((sum, d) => sum + d.points, 0), [deeds]);
@@ -2634,8 +2809,32 @@ export default function App() {
       setShowLevelUp(true);
       setLastLevel(stage.level);
       saveToStorage(STORAGE_KEYS.LAST_LEVEL, stage.level);
+      // Show toast for level up
+      showToast('toast_levelUp', '🎉');
     }
-  }, [stage.level, lastLevel]);
+  }, [stage.level, lastLevel, showToast]);
+
+  // Streak milestone check - only trigger when streak increases
+  useEffect(() => {
+    const currentStreak = streak.current;
+    // Only show toast if streak increased (not on initial load)
+    if (currentStreak > previousStreak && currentStreak > 0 && previousStreak > 0) {
+      // Check for milestone streaks
+      if (currentStreak === 3) {
+        showToast('toast_streak3', '🔥');
+      } else if (currentStreak === 7) {
+        showToast('toast_streak7', '💪');
+      } else if (currentStreak === 30) {
+        showToast('toast_streak30', '🌟');
+      } else if (currentStreak === 100) {
+        showToast('toast_streak100', '🏆');
+      }
+    }
+    // Always update previous streak to current
+    if (currentStreak !== previousStreak) {
+      setPreviousStreak(currentStreak);
+    }
+  }, [streak.current, previousStreak, showToast]);
 
   // Weather change timer - changes every 30-60 seconds
   useEffect(() => {
@@ -2663,6 +2862,28 @@ export default function App() {
     };
   }, [weather.id]);
 
+  // Notification scheduler - checks every minute if it's time to send a notification
+  useEffect(() => {
+    if (!settings.notificationsEnabled) return;
+
+    const checkAndSendNotification = () => {
+      if (shouldSendNotification(settings.notificationTime, lastNotificationDate)) {
+        sendNotification(lang);
+        const now = new Date().toISOString();
+        setLastNotificationDate(now);
+        saveToStorage(STORAGE_KEYS.LAST_NOTIFICATION, now);
+      }
+    };
+
+    // Check immediately when component mounts or settings change
+    checkAndSendNotification();
+
+    // Then check every minute
+    const interval = setInterval(checkAndSendNotification, 60000); // 60000ms = 1 minute
+
+    return () => clearInterval(interval);
+  }, [settings.notificationsEnabled, settings.notificationTime, lastNotificationDate, lang]);
+
   // Handlers
   const handleOnboardingComplete = () => {
     setShowOnboarding(false);
@@ -2682,7 +2903,25 @@ export default function App() {
     saveToStorage(STORAGE_KEYS.STREAK, { record: 0 });
   };
 
-  const handleAddDeed = (deed) => setDeeds(prev => [...prev, deed]);
+  const handleAddDeed = (deed) => {
+    setDeeds(prev => [...prev, deed]);
+    // Show toast when deed is added
+    showToast('toast_deedAdded', '🌱');
+    
+    // Randomly show motivational toast (30% chance)
+    if (Math.random() < 0.3) {
+      const motivationalKeys = [
+        'toast_motivational1', 'toast_motivational2', 'toast_motivational3',
+        'toast_motivational4', 'toast_motivational5', 'toast_motivational6',
+        'toast_motivational7', 'toast_motivational8'
+      ];
+      const randomKey = motivationalKeys[Math.floor(Math.random() * motivationalKeys.length)];
+      // Show motivational toast after a short delay
+      setTimeout(() => {
+        showToast(randomKey);
+      }, 1500);
+    }
+  };
 
   // Show onboarding for new users
   if (showOnboarding) {
@@ -2719,6 +2958,9 @@ export default function App() {
           
           {showAddDeed && <AddDeedScreen onSave={handleAddDeed} onClose={() => setShowAddDeed(false)} nextStage={nextStage} pointsToNext={pointsToNext} />}
           {showLevelUp && <LevelUpModal stage={stage} onClose={() => setShowLevelUp(false)} />}
+          
+          {/* Toast notifications */}
+          <ToastContainer toasts={toasts} removeToast={removeToast} />
         </div>
       </div>
     </LanguageContext.Provider>
