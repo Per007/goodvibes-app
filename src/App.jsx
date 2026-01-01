@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, createContext, useContext } from 'react';
+import React, { useState, useMemo, useEffect, useCallback, createContext, useContext } from 'react';
 
 // ============================================
 // LANGUAGE SYSTEM
@@ -379,8 +379,8 @@ const ToastContainer = ({ toasts, removeToast }) => {
 const useToast = (lang) => {
   const [toasts, setToasts] = useState([]);
 
-  const showToast = (messageKey, emoji = null) => {
-    const text = translations[lang][messageKey] || messageKey;
+  const showToast = useCallback((messageKey, emoji = null) => {
+    const text = translations[lang]?.[messageKey] || translations['en']?.[messageKey] || messageKey;
     const newToast = {
       id: Date.now() + Math.random(),
       text,
@@ -388,11 +388,11 @@ const useToast = (lang) => {
     };
     
     setToasts((prev) => [...prev, newToast]);
-  };
+  }, [lang]);
 
-  const removeToast = (id) => {
+  const removeToast = useCallback((id) => {
     setToasts((prev) => prev.filter((toast) => toast.id !== id));
-  };
+  }, []);
 
   return { toasts, showToast, removeToast };
 };
