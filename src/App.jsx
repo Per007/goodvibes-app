@@ -160,6 +160,155 @@ const translations = {
     toast_motivational6: 'Consistentie is de sleutel! 🔑',
     toast_motivational7: 'Positieve energie verspreiden! 🌈',
     toast_motivational8: 'Elke dag telt mee! 📅',
+    // Achievements
+    achievementsUnlocked: 'Prestaties ontgrendeld',
+    achievementDetails: 'Prestatie Details',
+    achievementLocked: 'Nog niet ontgrendeld',
+    achievementLevel: 'Level Prestatie',
+    achievementStreak: 'Streak Prestatie',
+    achievementCategory: 'Categorie Prestatie',
+    achievementMilestone: 'Mijlpaal Prestatie',
+    achievementSpecial: 'Speciale Prestatie',
+    // Level achievements
+    achievement_level_1: 'Eerste Stap',
+    achievement_level_2: 'Groei Begint',
+    achievement_level_3: 'Eerste Scheut',
+    achievement_level_4: 'Kiemplant',
+    achievement_level_5: 'Jonge Plant',
+    achievement_level_6: 'Struikje',
+    achievement_level_7: 'Grote Struik',
+    achievement_level_8: 'Jonge Boom',
+    achievement_level_9: 'Bloeiende Boom',
+    achievement_level_10: 'Fruitboom',
+    achievement_level_11: 'Schaduwrijke Boom',
+    achievement_level_12: 'Eeuwenoude Boom',
+    achievement_level_13: 'Heilige Boom',
+    achievement_level_14: 'Boom des Levens',
+    achievement_level_15: 'Wereldboom',
+    achievement_level_16: 'Kosmische Boom',
+    // Streak achievements
+    achievement_streak_3: 'Beginner Streak',
+    achievement_streak_7: 'Week Warrior',
+    achievement_streak_14: 'Two Week Champion',
+    achievement_streak_30: 'Monthly Master',
+    achievement_streak_60: 'Dedication Deity',
+    achievement_streak_100: 'Century Streak',
+    achievement_streak_365: 'Year Legend',
+    // Category achievements (will be generated dynamically)
+    achievement_social_5: 'Social Starter',
+    achievement_social_10: 'Social Butterfly',
+    achievement_social_25: 'Social Networker',
+    achievement_social_50: 'Social Master',
+    achievement_social_100: 'Social Legend',
+    achievement_environment_5: 'Milieu Beginner',
+    achievement_environment_10: 'Milieu Held',
+    achievement_environment_25: 'Milieu Activist',
+    achievement_environment_50: 'Milieu Meester',
+    achievement_environment_100: 'Milieu Legende',
+    achievement_health_5: 'Gezondheid Starter',
+    achievement_health_10: 'Gezondheid Champion',
+    achievement_health_25: 'Gezondheid Expert',
+    achievement_health_50: 'Gezondheid Meester',
+    achievement_health_100: 'Gezondheid Legende',
+    achievement_creativity_5: 'Creativiteit Starter',
+    achievement_creativity_10: 'Creatief Genie',
+    achievement_creativity_25: 'Creativiteit Expert',
+    achievement_creativity_50: 'Creativiteit Meester',
+    achievement_creativity_100: 'Creativiteit Legende',
+    achievement_kindness_5: 'Vriendelijkheid Starter',
+    achievement_kindness_10: 'Vriendelijk Hart',
+    achievement_kindness_25: 'Vriendelijkheid Expert',
+    achievement_kindness_50: 'Vriendelijkheid Meester',
+    achievement_kindness_100: 'Vriendelijkheid Legende',
+    achievement_learning_5: 'Leren Starter',
+    achievement_learning_10: 'Leergierig',
+    achievement_learning_25: 'Leren Expert',
+    achievement_learning_50: 'Leren Meester',
+    achievement_learning_100: 'Leren Legende',
+    achievement_family_5: 'Familie Starter',
+    achievement_family_10: 'Familie Champion',
+    achievement_family_25: 'Familie Expert',
+    achievement_family_50: 'Familie Meester',
+    achievement_family_100: 'Familie Legende',
+    achievement_work_5: 'Werk Starter',
+    achievement_work_10: 'Werk Champion',
+    achievement_work_25: 'Werk Expert',
+    achievement_work_50: 'Werk Meester',
+    achievement_work_100: 'Werk Legende',
+    achievement_mindfulness_5: 'Mindfulness Starter',
+    achievement_mindfulness_10: 'Mindful Beginner',
+    achievement_mindfulness_25: 'Mindfulness Expert',
+    achievement_mindfulness_50: 'Mindfulness Master',
+    achievement_mindfulness_100: 'Mindfulness Legende',
+    achievement_volunteer_5: 'Vrijwilliger Starter',
+    achievement_volunteer_10: 'Vrijwilliger Helper',
+    achievement_volunteer_25: 'Vrijwilliger Expert',
+    achievement_volunteer_50: 'Vrijwilliger Veteran',
+    achievement_volunteer_100: 'Vrijwilliger Legende',
+    achievement_finance_5: 'Financieel Starter',
+    achievement_finance_10: 'Financieel Bewust',
+    achievement_finance_25: 'Financieel Expert',
+    achievement_finance_50: 'Financieel Meester',
+    achievement_finance_100: 'Financieel Legende',
+    achievement_pet_5: 'Huisdier Starter',
+    achievement_pet_10: 'Huisdier Liefhebber',
+    achievement_pet_25: 'Huisdier Expert',
+    achievement_pet_50: 'Huisdier Meester',
+    achievement_pet_100: 'Huisdier Legende',
+    // Milestone achievements
+    achievement_deeds_10: 'Eerste 10 Daden',
+    achievement_deeds_25: '25 Daden Club',
+    achievement_deeds_50: '50 Daden Meester',
+    achievement_deeds_100: '100 Daden Legende',
+    achievement_deeds_250: '250 Daden Expert',
+    achievement_deeds_500: '500 Daden Champion',
+    achievement_deeds_1000: '1000 Daden Legende',
+    achievement_points_100: '100 Punten',
+    achievement_points_250: '250 Punten',
+    achievement_points_500: '500 Punten',
+    achievement_points_1000: '1000 Punten',
+    achievement_points_2500: '2500 Punten',
+    achievement_points_5000: '5000 Punten',
+    // Special achievements
+    achievement_perfect_week: 'Perfecte Week',
+    achievement_perfect_month: 'Perfecte Maand',
+    achievement_category_diversity: 'Categorie Diversiteit',
+    achievement_consistency: 'Consistentie',
+    achievement_balanced_life: 'Gebalanceerd Leven',
+    achievement_weekend_warrior: 'Weekend Warrior',
+    achievement_high_impact: 'Hoge Impact',
+    // Goals
+    goals: 'Doelen',
+    myGoals: 'Mijn Doelen',
+    newGoal: 'Nieuw Doel',
+    createGoal: 'Doel Aanmaken',
+    goalType: 'Doel Type',
+    goalTarget: 'Doel',
+    goalPeriod: 'Periode',
+    goalCategory: 'Categorie',
+    goalProgress: 'Voortgang',
+    goalCompleted: 'Voltooid',
+    goalActive: 'Actief',
+    goalExpired: 'Verlopen',
+    goalDeadline: 'Deadline',
+    goalType_deeds_week: 'Daden deze week',
+    goalType_deeds_month: 'Daden deze maand',
+    goalType_deeds_continuous: 'Totaal daden',
+    goalType_points_week: 'Punten deze week',
+    goalType_points_month: 'Punten deze maand',
+    goalType_points_continuous: 'Totaal punten',
+    goalType_category_week: 'Daden in categorie deze week',
+    goalType_category_month: 'Daden in categorie deze maand',
+    goalType_streak_target: 'Streak doel',
+    goalPeriod_week: 'Week',
+    goalPeriod_month: 'Maand',
+    goalPeriod_continuous: 'Continu',
+    goalCompletedToast: 'Doel voltooid! 🎉',
+    goalHalfwayToast: '50% van je doel bereikt! 💪',
+    noGoals: 'Nog geen doelen',
+    createFirstGoal: 'Maak je eerste doel aan!',
+    deleteGoal: 'Doel Verwijderen',
+    deleteGoalConfirm: 'Weet je zeker dat je dit doel wilt verwijderen?',
   },
   en: {
     appName: 'GoodVibes',
@@ -316,6 +465,155 @@ const translations = {
     toast_motivational6: 'Consistency is the key! 🔑',
     toast_motivational7: 'Spreading positive energy! 🌈',
     toast_motivational8: 'Every day matters! 📅',
+    // Achievements
+    achievementsUnlocked: 'Achievements Unlocked',
+    achievementDetails: 'Achievement Details',
+    achievementLocked: 'Not yet unlocked',
+    achievementLevel: 'Level Achievement',
+    achievementStreak: 'Streak Achievement',
+    achievementCategory: 'Category Achievement',
+    achievementMilestone: 'Milestone Achievement',
+    achievementSpecial: 'Special Achievement',
+    // Level achievements
+    achievement_level_1: 'First Step',
+    achievement_level_2: 'Growth Begins',
+    achievement_level_3: 'First Sprout',
+    achievement_level_4: 'Seedling',
+    achievement_level_5: 'Young Plant',
+    achievement_level_6: 'Small Bush',
+    achievement_level_7: 'Large Bush',
+    achievement_level_8: 'Young Tree',
+    achievement_level_9: 'Blooming Tree',
+    achievement_level_10: 'Fruit Tree',
+    achievement_level_11: 'Shade Tree',
+    achievement_level_12: 'Ancient Tree',
+    achievement_level_13: 'Sacred Tree',
+    achievement_level_14: 'Tree of Life',
+    achievement_level_15: 'World Tree',
+    achievement_level_16: 'Cosmic Tree',
+    // Streak achievements
+    achievement_streak_3: 'Beginner Streak',
+    achievement_streak_7: 'Week Warrior',
+    achievement_streak_14: 'Two Week Champion',
+    achievement_streak_30: 'Monthly Master',
+    achievement_streak_60: 'Dedication Deity',
+    achievement_streak_100: 'Century Streak',
+    achievement_streak_365: 'Year Legend',
+    // Category achievements
+    achievement_social_5: 'Social Starter',
+    achievement_social_10: 'Social Butterfly',
+    achievement_social_25: 'Social Networker',
+    achievement_social_50: 'Social Master',
+    achievement_social_100: 'Social Legend',
+    achievement_environment_5: 'Environment Beginner',
+    achievement_environment_10: 'Environment Hero',
+    achievement_environment_25: 'Environment Activist',
+    achievement_environment_50: 'Environment Master',
+    achievement_environment_100: 'Environment Legend',
+    achievement_health_5: 'Health Starter',
+    achievement_health_10: 'Health Champion',
+    achievement_health_25: 'Health Expert',
+    achievement_health_50: 'Health Master',
+    achievement_health_100: 'Health Legend',
+    achievement_creativity_5: 'Creativity Starter',
+    achievement_creativity_10: 'Creative Genius',
+    achievement_creativity_25: 'Creativity Expert',
+    achievement_creativity_50: 'Creativity Master',
+    achievement_creativity_100: 'Creativity Legend',
+    achievement_kindness_5: 'Kindness Starter',
+    achievement_kindness_10: 'Kind Heart',
+    achievement_kindness_25: 'Kindness Expert',
+    achievement_kindness_50: 'Kindness Master',
+    achievement_kindness_100: 'Kindness Legend',
+    achievement_learning_5: 'Learning Starter',
+    achievement_learning_10: 'Curious Learner',
+    achievement_learning_25: 'Learning Expert',
+    achievement_learning_50: 'Learning Master',
+    achievement_learning_100: 'Learning Legend',
+    achievement_family_5: 'Family Starter',
+    achievement_family_10: 'Family Champion',
+    achievement_family_25: 'Family Expert',
+    achievement_family_50: 'Family Master',
+    achievement_family_100: 'Family Legend',
+    achievement_work_5: 'Work Starter',
+    achievement_work_10: 'Work Champion',
+    achievement_work_25: 'Work Expert',
+    achievement_work_50: 'Work Master',
+    achievement_work_100: 'Work Legend',
+    achievement_mindfulness_5: 'Mindfulness Starter',
+    achievement_mindfulness_10: 'Mindful Beginner',
+    achievement_mindfulness_25: 'Mindfulness Expert',
+    achievement_mindfulness_50: 'Mindfulness Master',
+    achievement_mindfulness_100: 'Mindfulness Legend',
+    achievement_volunteer_5: 'Volunteer Starter',
+    achievement_volunteer_10: 'Volunteer Helper',
+    achievement_volunteer_25: 'Volunteer Expert',
+    achievement_volunteer_50: 'Volunteer Veteran',
+    achievement_volunteer_100: 'Volunteer Legend',
+    achievement_finance_5: 'Finance Starter',
+    achievement_finance_10: 'Finance Aware',
+    achievement_finance_25: 'Finance Expert',
+    achievement_finance_50: 'Finance Master',
+    achievement_finance_100: 'Finance Legend',
+    achievement_pet_5: 'Pet Starter',
+    achievement_pet_10: 'Pet Lover',
+    achievement_pet_25: 'Pet Expert',
+    achievement_pet_50: 'Pet Master',
+    achievement_pet_100: 'Pet Legend',
+    // Milestone achievements
+    achievement_deeds_10: 'First 10 Deeds',
+    achievement_deeds_25: '25 Deeds Club',
+    achievement_deeds_50: '50 Deeds Master',
+    achievement_deeds_100: '100 Deeds Legend',
+    achievement_deeds_250: '250 Deeds Expert',
+    achievement_deeds_500: '500 Deeds Champion',
+    achievement_deeds_1000: '1000 Deeds Legend',
+    achievement_points_100: '100 Points',
+    achievement_points_250: '250 Points',
+    achievement_points_500: '500 Points',
+    achievement_points_1000: '1000 Points',
+    achievement_points_2500: '2500 Points',
+    achievement_points_5000: '5000 Points',
+    // Special achievements
+    achievement_perfect_week: 'Perfect Week',
+    achievement_perfect_month: 'Perfect Month',
+    achievement_category_diversity: 'Category Diversity',
+    achievement_consistency: 'Consistency',
+    achievement_balanced_life: 'Balanced Life',
+    achievement_weekend_warrior: 'Weekend Warrior',
+    achievement_high_impact: 'High Impact',
+    // Goals
+    goals: 'Goals',
+    myGoals: 'My Goals',
+    newGoal: 'New Goal',
+    createGoal: 'Create Goal',
+    goalType: 'Goal Type',
+    goalTarget: 'Target',
+    goalPeriod: 'Period',
+    goalCategory: 'Category',
+    goalProgress: 'Progress',
+    goalCompleted: 'Completed',
+    goalActive: 'Active',
+    goalExpired: 'Expired',
+    goalDeadline: 'Deadline',
+    goalType_deeds_week: 'Deeds this week',
+    goalType_deeds_month: 'Deeds this month',
+    goalType_deeds_continuous: 'Total deeds',
+    goalType_points_week: 'Points this week',
+    goalType_points_month: 'Points this month',
+    goalType_points_continuous: 'Total points',
+    goalType_category_week: 'Deeds in category this week',
+    goalType_category_month: 'Deeds in category this month',
+    goalType_streak_target: 'Streak target',
+    goalPeriod_week: 'Week',
+    goalPeriod_month: 'Month',
+    goalPeriod_continuous: 'Continuous',
+    goalCompletedToast: 'Goal completed! 🎉',
+    goalHalfwayToast: '50% of your goal reached! 💪',
+    noGoals: 'No goals yet',
+    createFirstGoal: 'Create your first goal!',
+    deleteGoal: 'Delete Goal',
+    deleteGoalConfirm: 'Are you sure you want to delete this goal?',
   }
 };
 
@@ -408,6 +706,8 @@ const STORAGE_KEYS = {
   ONBOARDING: 'goodvibes_onboarding_complete',
   LAST_LEVEL: 'goodvibes_last_level',
   LAST_NOTIFICATION: 'goodvibes_last_notification',
+  ACHIEVEMENTS: 'goodvibes_achievements',
+  GOALS: 'goodvibes_goals',
 };
 
 const loadFromStorage = (key, defaultValue) => {
@@ -606,6 +906,513 @@ const getNextStage = (points) => STAGES.find(s => points < s.min) || null;
 const getProgress = (points) => {
   const curr = getStage(points), next = getNextStage(points);
   return next ? ((points - curr.min) / (next.min - curr.min)) * 100 : 100;
+};
+
+// ============================================
+// ACHIEVEMENTS SYSTEM
+// ============================================
+
+const ACHIEVEMENTS = {
+  level: STAGES.map(s => ({
+    id: `level_${s.level}`,
+    level: s.level,
+    nameKey: `achievement_level_${s.level}`,
+    emoji: s.level <= 4 ? '🌱' : s.level <= 8 ? '🌿' : s.level <= 12 ? '🌳' : '✨',
+    type: 'level'
+  })),
+  streak: [
+    { id: 'streak_3', days: 3, nameKey: 'achievement_streak_3', emoji: '🔥', type: 'streak' },
+    { id: 'streak_7', days: 7, nameKey: 'achievement_streak_7', emoji: '💪', type: 'streak' },
+    { id: 'streak_14', days: 14, nameKey: 'achievement_streak_14', emoji: '⭐', type: 'streak' },
+    { id: 'streak_30', days: 30, nameKey: 'achievement_streak_30', emoji: '🌟', type: 'streak' },
+    { id: 'streak_60', days: 60, nameKey: 'achievement_streak_60', emoji: '🏆', type: 'streak' },
+    { id: 'streak_100', days: 100, nameKey: 'achievement_streak_100', emoji: '💎', type: 'streak' },
+    { id: 'streak_365', days: 365, nameKey: 'achievement_streak_365', emoji: '👑', type: 'streak' },
+  ],
+  category: (() => {
+    const categoryAchievements = [];
+    const counts = [5, 10, 25, 50, 100];
+    CATEGORIES.forEach(cat => {
+      counts.forEach(count => {
+        categoryAchievements.push({
+          id: `${cat.id}_${count}`,
+          category: cat.id,
+          count: count,
+          nameKey: `achievement_${cat.id}_${count}`,
+          emoji: cat.emoji,
+          type: 'category'
+        });
+      });
+    });
+    return categoryAchievements;
+  })(),
+  milestone: [
+    { id: 'deeds_10', type: 'deeds', count: 10, nameKey: 'achievement_deeds_10', emoji: '🌱' },
+    { id: 'deeds_25', type: 'deeds', count: 25, nameKey: 'achievement_deeds_25', emoji: '🌿' },
+    { id: 'deeds_50', type: 'deeds', count: 50, nameKey: 'achievement_deeds_50', emoji: '🌳' },
+    { id: 'deeds_100', type: 'deeds', count: 100, nameKey: 'achievement_deeds_100', emoji: '🏅' },
+    { id: 'deeds_250', type: 'deeds', count: 250, nameKey: 'achievement_deeds_250', emoji: '⭐' },
+    { id: 'deeds_500', type: 'deeds', count: 500, nameKey: 'achievement_deeds_500', emoji: '🌟' },
+    { id: 'deeds_1000', type: 'deeds', count: 1000, nameKey: 'achievement_deeds_1000', emoji: '👑' },
+    { id: 'points_100', type: 'points', count: 100, nameKey: 'achievement_points_100', emoji: '💯' },
+    { id: 'points_250', type: 'points', count: 250, nameKey: 'achievement_points_250', emoji: '🎯' },
+    { id: 'points_500', type: 'points', count: 500, nameKey: 'achievement_points_500', emoji: '🏆' },
+    { id: 'points_1000', type: 'points', count: 1000, nameKey: 'achievement_points_1000', emoji: '💎' },
+    { id: 'points_2500', type: 'points', count: 2500, nameKey: 'achievement_points_2500', emoji: '✨' },
+    { id: 'points_5000', type: 'points', count: 5000, nameKey: 'achievement_points_5000', emoji: '👑' },
+  ],
+  special: [
+    {
+      id: 'perfect_week',
+      nameKey: 'achievement_perfect_week',
+      emoji: '🌟',
+      type: 'special',
+      check: (deeds) => {
+        const now = new Date();
+        const startOfWeek = new Date(now);
+        startOfWeek.setDate(now.getDate() - now.getDay() + (now.getDay() === 0 ? -6 : 1));
+        startOfWeek.setHours(0, 0, 0, 0);
+        const weekDeeds = deeds.filter(d => new Date(d.date) >= startOfWeek);
+        const uniqueDays = new Set(weekDeeds.map(d => d.date));
+        return uniqueDays.size >= 7;
+      }
+    },
+    {
+      id: 'perfect_month',
+      nameKey: 'achievement_perfect_month',
+      emoji: '💫',
+      type: 'special',
+      check: (deeds) => {
+        const now = new Date();
+        const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+        const monthDeeds = deeds.filter(d => new Date(d.date) >= startOfMonth);
+        const uniqueDays = new Set(monthDeeds.map(d => d.date));
+        return uniqueDays.size >= 30;
+      }
+    },
+    {
+      id: 'category_diversity',
+      nameKey: 'achievement_category_diversity',
+      emoji: '🌈',
+      type: 'special',
+      check: (deeds) => {
+        const uniqueCategories = new Set(deeds.map(d => d.category));
+        return uniqueCategories.size >= CATEGORIES.length;
+      }
+    },
+    {
+      id: 'consistency',
+      nameKey: 'achievement_consistency',
+      emoji: '📅',
+      type: 'special',
+      check: (deeds) => {
+        // Check if user has at least 5 deeds per week for 4 consecutive weeks
+        const now = new Date();
+        let consecutiveWeeks = 0;
+        for (let i = 0; i < 4; i++) {
+          const weekStart = new Date(now);
+          weekStart.setDate(now.getDate() - (now.getDay() || 7) + 1 - (i * 7));
+          weekStart.setHours(0, 0, 0, 0);
+          const weekEnd = new Date(weekStart);
+          weekEnd.setDate(weekStart.getDate() + 6);
+          const weekDeeds = deeds.filter(d => {
+            const deedDate = new Date(d.date);
+            return deedDate >= weekStart && deedDate <= weekEnd;
+          });
+          if (weekDeeds.length >= 5) {
+            consecutiveWeeks++;
+          } else {
+            break;
+          }
+        }
+        return consecutiveWeeks >= 4;
+      }
+    },
+    {
+      id: 'balanced_life',
+      nameKey: 'achievement_balanced_life',
+      emoji: '⚖️',
+      type: 'special',
+      check: (deeds) => {
+        const categoryCounts = {};
+        deeds.forEach(d => {
+          categoryCounts[d.category] = (categoryCounts[d.category] || 0) + 1;
+        });
+        const categoriesWith3Plus = Object.values(categoryCounts).filter(count => count >= 3).length;
+        return categoriesWith3Plus >= 5;
+      }
+    },
+    {
+      id: 'weekend_warrior',
+      nameKey: 'achievement_weekend_warrior',
+      emoji: '🎉',
+      type: 'special',
+      check: (deeds) => {
+        const weekendDeeds = deeds.filter(d => {
+          const date = new Date(d.date);
+          const day = date.getDay();
+          return day === 0 || day === 6; // Sunday or Saturday
+        });
+        return weekendDeeds.length >= 5;
+      }
+    },
+    {
+      id: 'high_impact',
+      nameKey: 'achievement_high_impact',
+      emoji: '💥',
+      type: 'special',
+      check: (deeds) => {
+        const highImpactDeeds = deeds.filter(d => d.points >= 4);
+        return highImpactDeeds.length >= 10;
+      }
+    },
+  ]
+};
+
+// Flatten all achievements for easy access
+const ALL_ACHIEVEMENTS = [
+  ...ACHIEVEMENTS.level,
+  ...ACHIEVEMENTS.streak,
+  ...ACHIEVEMENTS.category,
+  ...ACHIEVEMENTS.milestone,
+  ...ACHIEVEMENTS.special
+];
+
+// Check which achievements are unlocked
+const checkAchievements = (deeds, totalPoints, stage, streak) => {
+  const unlocked = [];
+  
+  // Check level achievements
+  unlocked.push(...ACHIEVEMENTS.level.filter(a => stage.level >= a.level));
+  
+  // Check streak achievements
+  unlocked.push(...ACHIEVEMENTS.streak.filter(a => streak.current >= a.days));
+  
+  // Check category achievements
+  CATEGORIES.forEach(cat => {
+    const catDeeds = deeds.filter(d => d.category === cat.id);
+    unlocked.push(...ACHIEVEMENTS.category.filter(a => 
+      a.category === cat.id && catDeeds.length >= a.count
+    ));
+  });
+  
+  // Check milestone achievements
+  unlocked.push(...ACHIEVEMENTS.milestone.filter(a => {
+    if (a.type === 'deeds') return deeds.length >= a.count;
+    if (a.type === 'points') return totalPoints >= a.count;
+    return false;
+  }));
+  
+  // Check special achievements
+  unlocked.push(...ACHIEVEMENTS.special.filter(a => a.check(deeds)));
+  
+  // Remove duplicates and return unique achievements
+  const uniqueUnlocked = Array.from(new Map(unlocked.map(a => [a.id, a])).values());
+  return uniqueUnlocked;
+};
+
+// ============================================
+// GOALS SYSTEM
+// ============================================
+
+// Helper functions for date calculations
+const getStartOfWeek = () => {
+  const now = new Date();
+  const start = new Date(now);
+  start.setDate(now.getDate() - now.getDay() + (now.getDay() === 0 ? -6 : 1));
+  start.setHours(0, 0, 0, 0);
+  return start.toISOString().split('T')[0];
+};
+
+const getEndOfWeek = () => {
+  const start = new Date(getStartOfWeek());
+  start.setDate(start.getDate() + 6);
+  return start.toISOString().split('T')[0];
+};
+
+const getStartOfMonth = () => {
+  const now = new Date();
+  return new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0];
+};
+
+const getEndOfMonth = () => {
+  const now = new Date();
+  return new Date(now.getFullYear(), now.getMonth() + 1, 0).toISOString().split('T')[0];
+};
+
+const isInWeek = (dateStr, weekStartStr) => {
+  const date = new Date(dateStr);
+  const weekStart = new Date(weekStartStr);
+  const weekEnd = new Date(weekStart);
+  weekEnd.setDate(weekStart.getDate() + 6);
+  return date >= weekStart && date <= weekEnd;
+};
+
+const isInMonth = (dateStr, monthStartStr) => {
+  const date = new Date(dateStr);
+  const monthStart = new Date(monthStartStr);
+  const monthEnd = new Date(monthStart.getFullYear(), monthStart.getMonth() + 1, 0);
+  return date >= monthStart && date <= monthEnd;
+};
+
+const isNewWeek = (endDateStr, now) => {
+  const endDate = new Date(endDateStr);
+  return now > endDate;
+};
+
+const isNewMonth = (endDateStr, now) => {
+  const endDate = new Date(endDateStr);
+  return now > endDate;
+};
+
+// Create a new goal
+const createGoal = (type, target, category = null, period = 'week') => {
+  const now = new Date();
+  const startDate = period === 'week' ? getStartOfWeek() : period === 'month' ? getStartOfMonth() : now.toISOString().split('T')[0];
+  const endDate = period === 'week' ? getEndOfWeek() : period === 'month' ? getEndOfMonth() : null;
+  
+  return {
+    id: `goal_${Date.now()}`,
+    type,
+    target,
+    current: 0,
+    category,
+    period,
+    startDate,
+    endDate,
+    completed: false,
+    completedDate: null,
+    createdAt: now.toISOString()
+  };
+};
+
+// Update goal progress
+const updateGoalProgress = (goals, deeds, totalPoints, streak) => {
+  return goals.map(goal => {
+    if (goal.completed && goal.completedDate) return goal;
+    
+    let current = 0;
+    const now = new Date();
+    
+    switch(goal.type) {
+      case 'deeds_week':
+        current = deeds.filter(d => isInWeek(d.date, goal.startDate)).length;
+        break;
+      case 'deeds_month':
+        current = deeds.filter(d => isInMonth(d.date, goal.startDate)).length;
+        break;
+      case 'deeds_continuous':
+        current = deeds.length;
+        break;
+      case 'points_week':
+        current = deeds.filter(d => isInWeek(d.date, goal.startDate))
+          .reduce((sum, d) => sum + d.points, 0);
+        break;
+      case 'points_month':
+        current = deeds.filter(d => isInMonth(d.date, goal.startDate))
+          .reduce((sum, d) => sum + d.points, 0);
+        break;
+      case 'points_continuous':
+        current = totalPoints;
+        break;
+      case 'category_week':
+        current = deeds.filter(d => 
+          d.category === goal.category && isInWeek(d.date, goal.startDate)
+        ).length;
+        break;
+      case 'category_month':
+        current = deeds.filter(d => 
+          d.category === goal.category && isInMonth(d.date, goal.startDate)
+        ).length;
+        break;
+      case 'streak_target':
+        current = streak.current;
+        break;
+      default:
+        current = 0;
+    }
+    
+    const completed = current >= goal.target;
+    const wasCompleted = goal.completed;
+    
+    return {
+      ...goal,
+      current: Math.min(current, goal.target), // Cap at target
+      completed,
+      completedDate: completed && !wasCompleted ? now.toISOString() : goal.completedDate
+    };
+  });
+};
+
+// Auto-reset goals for new periods
+const resetGoalsForNewPeriod = (goals) => {
+  const now = new Date();
+  return goals.map(goal => {
+    if (goal.period === 'week' && goal.endDate && isNewWeek(goal.endDate, now)) {
+      // Reset for new week
+      return createGoal(goal.type, goal.target, goal.category, 'week');
+    }
+    if (goal.period === 'month' && goal.endDate && isNewMonth(goal.endDate, now)) {
+      // Reset for new month
+      return createGoal(goal.type, goal.target, goal.category, 'month');
+    }
+    return goal;
+  });
+};
+
+// ============================================
+// CATEGORY STATISTICS
+// ============================================
+
+const filterByPeriod = (deeds, period) => {
+  if (period === 'all') return deeds;
+  
+  const now = new Date();
+  let startDate;
+  
+  if (period === 'week') {
+    startDate = new Date(now);
+    startDate.setDate(now.getDate() - now.getDay() + (now.getDay() === 0 ? -6 : 1));
+    startDate.setHours(0, 0, 0, 0);
+  } else if (period === 'month') {
+    startDate = new Date(now.getFullYear(), now.getMonth(), 1);
+  }
+  
+  return deeds.filter(d => new Date(d.date) >= startDate);
+};
+
+const getPreviousPeriod = (period) => {
+  if (period === 'week') return 'previous_week';
+  if (period === 'month') return 'previous_month';
+  return 'all';
+};
+
+const filterByPreviousPeriod = (deeds, period) => {
+  const now = new Date();
+  let startDate, endDate;
+  
+  if (period === 'previous_week') {
+    endDate = new Date(now);
+    endDate.setDate(now.getDate() - now.getDay() + (now.getDay() === 0 ? -6 : 1));
+    endDate.setHours(0, 0, 0, 0);
+    startDate = new Date(endDate);
+    startDate.setDate(startDate.getDate() - 7);
+  } else if (period === 'previous_month') {
+    endDate = new Date(now.getFullYear(), now.getMonth(), 1);
+    startDate = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+  } else {
+    return deeds;
+  }
+  
+  return deeds.filter(d => {
+    const deedDate = new Date(d.date);
+    return deedDate >= startDate && deedDate < endDate;
+  });
+};
+
+// Calculate category statistics
+const calculateCategoryStats = (deeds, period = 'all') => {
+  const filteredDeeds = filterByPeriod(deeds, period);
+  
+  return CATEGORIES.map(category => {
+    const categoryDeeds = filteredDeeds.filter(d => d.category === category.id);
+    const categoryPoints = categoryDeeds.reduce((sum, d) => sum + d.points, 0);
+    const avgPoints = categoryDeeds.length > 0 
+      ? parseFloat((categoryPoints / categoryDeeds.length).toFixed(1))
+      : 0;
+    
+    return {
+      category: category.id,
+      name: category.nameKey,
+      emoji: category.emoji,
+      color: category.color,
+      count: categoryDeeds.length,
+      points: categoryPoints,
+      avgPoints: avgPoints,
+      percentage: filteredDeeds.length > 0 
+        ? parseFloat(((categoryDeeds.length / filteredDeeds.length) * 100).toFixed(1))
+        : 0
+    };
+  }).filter(stat => stat.count > 0) // Only categories with deeds
+    .sort((a, b) => b.count - a.count); // Sort by count
+};
+
+// Compare periods
+const compareCategoryPeriods = (deeds, currentPeriod, previousPeriod) => {
+  const current = calculateCategoryStats(deeds, currentPeriod);
+  const previous = calculateCategoryStats(filterByPreviousPeriod(deeds, previousPeriod), 'all');
+  
+  return current.map(curr => {
+    const prev = previous.find(p => p.category === curr.category);
+    const change = prev && prev.count > 0
+      ? parseFloat((((curr.count - prev.count) / prev.count) * 100).toFixed(1))
+      : null;
+    
+    return {
+      ...curr,
+      previousCount: prev?.count || 0,
+      change: change,
+      trend: change > 5 ? 'up' : change < -5 ? 'down' : 'stable'
+    };
+  });
+};
+
+// Generate category insights
+const generateCategoryInsights = (stats, comparison, lang, t) => {
+  const insights = [];
+  
+  if (stats.length === 0) {
+    insights.push(lang === 'nl' ? 'Begin met goede daden om statistieken te zien!' : 'Start doing good deeds to see statistics!');
+    return insights;
+  }
+  
+  // Most used category
+  const topCategory = stats[0];
+  insights.push(
+    lang === 'nl' 
+      ? `Je favoriete categorie is ${t(topCategory.name)} ${topCategory.emoji} met ${topCategory.count} daden`
+      : `Your favorite category is ${t(topCategory.name)} ${topCategory.emoji} with ${topCategory.count} deeds`
+  );
+  
+  // Categories not used
+  const usedCategories = new Set(stats.map(s => s.category));
+  const unusedCategories = CATEGORIES.filter(c => !usedCategories.has(c.id));
+  if (unusedCategories.length > 0 && unusedCategories.length <= 3) {
+    const suggestion = unusedCategories[0];
+    insights.push(
+      lang === 'nl'
+        ? `Probeer eens ${t(suggestion.nameKey)} ${suggestion.emoji} - je hebt er nog geen daden in`
+        : `Try ${t(suggestion.nameKey)} ${suggestion.emoji} - you haven't done any deeds in this category yet`
+    );
+  }
+  
+  // Trend insights
+  if (comparison) {
+    const growingCategory = comparison.find(c => c.trend === 'up' && c.change > 20);
+    if (growingCategory) {
+      insights.push(
+        lang === 'nl'
+          ? `Je ${t(growingCategory.name)} activiteit is ${Math.abs(growingCategory.change)}% gestegen! ${growingCategory.emoji}`
+          : `Your ${t(growingCategory.name)} activity has increased by ${Math.abs(growingCategory.change)}%! ${growingCategory.emoji}`
+      );
+    }
+  }
+  
+  // Most consistent category (highest percentage)
+  if (stats.length > 0) {
+    const mostConsistent = stats.reduce((max, stat) => 
+      stat.percentage > max.percentage ? stat : max
+    );
+    if (mostConsistent.percentage > 30) {
+      insights.push(
+        lang === 'nl'
+          ? `Je meest consistente categorie: ${t(mostConsistent.name)} ${mostConsistent.emoji}`
+          : `Your most consistent category: ${t(mostConsistent.name)} ${mostConsistent.emoji}`
+      );
+    }
+  }
+  
+  return insights;
 };
 
 // ============================================
@@ -1695,7 +2502,7 @@ const BottomNav = ({ activeTab, setActiveTab }) => {
     { id: 'home', label: t('home'), icon: '🏠' },
     { id: 'tree', label: t('tree'), icon: '🌳' },
     { id: 'calendar', label: t('calendar'), icon: '📅' },
-    { id: 'journey', label: t('nav_journey'), icon: '🗺️' },
+    { id: 'goals', label: t('goals'), icon: '🎯' },
     { id: 'profile', label: t('profile'), icon: '👤' },
   ];
 
@@ -2579,6 +3386,22 @@ const ProfileScreen = ({ totalPoints, deeds, stage, settings, setSettings, onRes
   const { lang, setLang } = useContext(LanguageContext);
   const phase = PHASES[stage.phase];
   const [showResetConfirm, setShowResetConfirm] = useState(false);
+  const [selectedAchievement, setSelectedAchievement] = useState(null);
+  const [showCategoryStats, setShowCategoryStats] = useState(false);
+  
+  // Calculate streak and achievements
+  const streak = useMemo(() => calculateStreak(deeds), [deeds]);
+  const unlockedAchievements = useMemo(() => 
+    checkAchievements(deeds, totalPoints, stage, streak), 
+    [deeds, totalPoints, stage, streak]
+  );
+  const unlockedIds = new Set(unlockedAchievements.map(a => a.id));
+  const totalAchievements = ALL_ACHIEVEMENTS.length;
+  const unlockedCount = unlockedAchievements.length;
+  
+  if (showCategoryStats) {
+    return <CategoryStatisticsScreen deeds={deeds} onBack={() => setShowCategoryStats(false)} />;
+  }
 
   const handleNotificationToggle = async () => {
     if (!settings.notificationsEnabled) {
@@ -2621,14 +3444,112 @@ const ProfileScreen = ({ totalPoints, deeds, stage, settings, setSettings, onRes
         </div>
       </div>
 
-      <h2 className="text-base font-bold text-gray-800 mb-3">🏆 {t('achievements')}</h2>
-      <div className="grid grid-cols-4 gap-2 mb-6">
-        {[3, 5, 9, 10, 12, 13, 14, 16].map(lvl => (
-          <div key={lvl} className={`aspect-square rounded-xl overflow-hidden ${stage.level >= lvl ? 'ring-2 ring-amber-300' : 'opacity-40 grayscale'}`}>
-            <NaturalisticTree level={lvl} size="small" />
+      <div className="mb-6">
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-base font-bold text-gray-800">🏆 {t('achievements')}</h2>
+          <span className="text-xs text-gray-500">{unlockedCount}/{totalAchievements}</span>
+        </div>
+        <div className="bg-white rounded-xl p-3 border border-gray-100 mb-3">
+          <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full transition-all duration-500"
+              style={{ width: `${(unlockedCount / totalAchievements) * 100}%` }}
+            />
           </div>
-        ))}
+          <p className="text-xs text-gray-500 mt-1 text-center">
+            {unlockedCount} {t('achievementsUnlocked')}
+          </p>
+        </div>
+        <div className="grid grid-cols-4 gap-2 max-h-64 overflow-y-auto">
+          {ALL_ACHIEVEMENTS.map(achievement => {
+            const isUnlocked = unlockedIds.has(achievement.id);
+            return (
+              <button
+                key={achievement.id}
+                onClick={() => setSelectedAchievement(achievement)}
+                className={`aspect-square rounded-xl p-2 border-2 transition-all ${
+                  isUnlocked 
+                    ? 'bg-gradient-to-br from-amber-50 to-yellow-50 border-amber-300 shadow-sm hover:shadow-md' 
+                    : 'bg-gray-50 border-gray-200 opacity-60'
+                }`}
+              >
+                <div className="text-2xl mb-1">{achievement.emoji}</div>
+                {isUnlocked && (
+                  <div className="text-[8px] text-gray-600 truncate">
+                    {t(achievement.nameKey)}
+                  </div>
+                )}
+              </button>
+            );
+          })}
+        </div>
       </div>
+      
+      {selectedAchievement && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setSelectedAchievement(null)}>
+          <div className="bg-white rounded-2xl p-6 max-w-sm w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="text-center mb-4">
+              <div className="text-6xl mb-2">{selectedAchievement.emoji}</div>
+              <h3 className="text-lg font-bold text-gray-800 mb-1">
+                {t(selectedAchievement.nameKey)}
+              </h3>
+              <p className="text-xs text-gray-500">
+                {unlockedIds.has(selectedAchievement.id) 
+                  ? t(`achievement${selectedAchievement.type.charAt(0).toUpperCase() + selectedAchievement.type.slice(1)}`)
+                  : t('achievementLocked')
+                }
+              </p>
+            </div>
+            {selectedAchievement.type === 'level' && (
+              <p className="text-sm text-gray-600 text-center">
+                {lang === 'nl' ? 'Bereik level' : 'Reach level'} {selectedAchievement.level}
+              </p>
+            )}
+            {selectedAchievement.type === 'streak' && (
+              <p className="text-sm text-gray-600 text-center">
+                {lang === 'nl' ? 'Houd een streak van' : 'Maintain a streak of'} {selectedAchievement.days} {lang === 'nl' ? 'dagen' : 'days'}
+              </p>
+            )}
+            {selectedAchievement.type === 'category' && (
+              <p className="text-sm text-gray-600 text-center">
+                {lang === 'nl' ? 'Doe' : 'Complete'} {selectedAchievement.count} {lang === 'nl' ? 'daden in' : 'deeds in'} {t(`cat_${selectedAchievement.category}`)}
+              </p>
+            )}
+            {selectedAchievement.type === 'deeds' && (
+              <p className="text-sm text-gray-600 text-center">
+                {lang === 'nl' ? 'Bereik totaal' : 'Reach total'} {selectedAchievement.count} {lang === 'nl' ? 'daden' : 'deeds'}
+              </p>
+            )}
+            {selectedAchievement.type === 'points' && (
+              <p className="text-sm text-gray-600 text-center">
+                {lang === 'nl' ? 'Verdien totaal' : 'Earn total'} {selectedAchievement.count} {lang === 'nl' ? 'punten' : 'points'}
+              </p>
+            )}
+            {selectedAchievement.type === 'special' && (
+              <p className="text-sm text-gray-600 text-center">
+                {lang === 'nl' ? 'Speciale prestatie' : 'Special achievement'}
+              </p>
+            )}
+            <button 
+              onClick={() => setSelectedAchievement(null)}
+              className="mt-4 w-full py-2 bg-emerald-500 text-white rounded-xl font-medium"
+            >
+              {t('close')}
+            </button>
+          </div>
+        </div>
+      )}
+
+      <button
+        onClick={() => setShowCategoryStats(true)}
+        className="w-full flex items-center justify-between p-3 bg-white rounded-xl border border-gray-100 mb-3 hover:shadow-md transition-shadow"
+      >
+        <div className="flex items-center gap-3">
+          <span>📊</span>
+          <span className="text-gray-700 font-medium text-sm">{t('statistics')}</span>
+        </div>
+        <span className="text-gray-400">→</span>
+      </button>
 
       <h2 className="text-base font-bold text-gray-800 mb-3">⚙️ {t('settings')}</h2>
       <div className="space-y-2">
@@ -2680,6 +3601,483 @@ const ProfileScreen = ({ totalPoints, deeds, stage, settings, setSettings, onRes
           </div>
         </div>
       )}
+    </div>
+  );
+};
+
+// ============================================
+// CATEGORY STATISTICS SCREEN
+// ============================================
+
+const CategoryStatisticsScreen = ({ deeds, onBack }) => {
+  const t = useTranslation();
+  const { lang } = useContext(LanguageContext);
+  const [period, setPeriod] = useState('all');
+  
+  const stats = useMemo(() => calculateCategoryStats(deeds, period), [deeds, period]);
+  const comparison = useMemo(() => {
+    if (period === 'all') return null;
+    return compareCategoryPeriods(deeds, period, getPreviousPeriod(period));
+  }, [deeds, period]);
+  const insights = useMemo(() => generateCategoryInsights(stats, comparison, lang, t), [stats, comparison, lang, t]);
+  
+  return (
+    <div className="px-4 pt-6 pb-32">
+      <div className="flex items-center gap-3 mb-6">
+        <button onClick={onBack} className="text-gray-600 text-xl">←</button>
+        <h1 className="text-xl font-bold text-gray-800">📊 {t('statistics')}</h1>
+      </div>
+      
+      {/* Period selector */}
+      <div className="flex gap-2 mb-4">
+        <button
+          onClick={() => setPeriod('week')}
+          className={`flex-1 py-2 rounded-xl font-medium text-sm ${
+            period === 'week' 
+              ? 'bg-emerald-500 text-white' 
+              : 'bg-white text-gray-600 border border-gray-200'
+          }`}
+        >
+          {t('thisWeek')}
+        </button>
+        <button
+          onClick={() => setPeriod('month')}
+          className={`flex-1 py-2 rounded-xl font-medium text-sm ${
+            period === 'month' 
+              ? 'bg-emerald-500 text-white' 
+              : 'bg-white text-gray-600 border border-gray-200'
+          }`}
+        >
+          {t('thisMonth')}
+        </button>
+        <button
+          onClick={() => setPeriod('all')}
+          className={`flex-1 py-2 rounded-xl font-medium text-sm ${
+            period === 'all' 
+              ? 'bg-emerald-500 text-white' 
+              : 'bg-white text-gray-600 border border-gray-200'
+          }`}
+        >
+          {lang === 'nl' ? 'Alles' : 'All'}
+        </button>
+      </div>
+      
+      {/* Top categories */}
+      {stats.length > 0 ? (
+        <>
+          <h2 className="text-base font-bold text-gray-800 mb-3">
+            {lang === 'nl' ? 'Top Categorieën' : 'Top Categories'}
+          </h2>
+          <div className="space-y-2 mb-6">
+            {stats.slice(0, 5).map(stat => (
+              <CategoryStatCard key={stat.category} stat={stat} comparison={comparison} />
+            ))}
+          </div>
+          
+          {/* Category distribution */}
+          <h2 className="text-base font-bold text-gray-800 mb-3">
+            {lang === 'nl' ? 'Verdeling' : 'Distribution'}
+          </h2>
+          <div className="bg-white rounded-xl p-4 border border-gray-100 mb-6">
+            <CategoryDistributionChart stats={stats} />
+          </div>
+          
+          {/* Insights */}
+          {insights.length > 0 && (
+            <>
+              <h2 className="text-base font-bold text-gray-800 mb-3">
+                {lang === 'nl' ? 'Inzichten' : 'Insights'}
+              </h2>
+              <div className="space-y-2">
+                {insights.map((insight, i) => (
+                  <div key={i} className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-3 border border-blue-100">
+                    <p className="text-sm text-gray-700">{insight}</p>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </>
+      ) : (
+        <div className="text-center py-12">
+          <div className="text-6xl mb-4">📊</div>
+          <p className="text-gray-600">{lang === 'nl' ? 'Nog geen statistieken beschikbaar' : 'No statistics available yet'}</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const CategoryStatCard = ({ stat, comparison }) => {
+  const t = useTranslation();
+  const { lang } = useContext(LanguageContext);
+  const comp = comparison?.find(c => c.category === stat.category);
+  
+  return (
+    <div className="bg-white rounded-xl p-3 border border-gray-100">
+      <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center gap-2">
+          <span className="text-2xl">{stat.emoji}</span>
+          <span className="font-semibold text-gray-800">{t(stat.name)}</span>
+        </div>
+        {comp && comp.trend !== 'stable' && (
+          <span className={`text-xs font-medium ${
+            comp.trend === 'up' ? 'text-emerald-600' : 'text-red-500'
+          }`}>
+            {comp.trend === 'up' ? '↑' : '↓'} {Math.abs(comp.change)}%
+          </span>
+        )}
+      </div>
+      <div className="flex items-baseline gap-2 mb-2">
+        <span className="text-lg font-bold" style={{ color: stat.color }}>
+          {stat.count}
+        </span>
+        <span className="text-xs text-gray-500">{t('deeds')}</span>
+        <span className="text-sm text-gray-400">•</span>
+        <span className="text-sm font-semibold" style={{ color: stat.color }}>
+          {stat.points} {t('points')}
+        </span>
+      </div>
+      <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+        <div
+          className="h-full rounded-full transition-all duration-500"
+          style={{ 
+            width: `${stat.percentage}%`,
+            backgroundColor: stat.color
+          }}
+        />
+      </div>
+      <div className="flex justify-between text-xs text-gray-500 mt-1">
+        <span>{stat.percentage}% {lang === 'nl' ? 'van totaal' : 'of total'}</span>
+        <span>{stat.avgPoints} {lang === 'nl' ? 'gem. punten' : 'avg points'}</span>
+      </div>
+    </div>
+  );
+};
+
+const CategoryDistributionChart = ({ stats }) => {
+  const t = useTranslation();
+  const { lang } = useContext(LanguageContext);
+  const total = stats.reduce((sum, s) => sum + s.count, 0);
+  
+  return (
+    <div className="space-y-2">
+      {stats.map(stat => {
+        const percentage = total > 0 ? (stat.count / total) * 100 : 0;
+        return (
+          <div key={stat.category} className="flex items-center gap-2">
+            <div className="flex items-center gap-2 w-24 flex-shrink-0">
+              <span className="text-lg">{stat.emoji}</span>
+              <span className="text-xs text-gray-600 truncate">{t(stat.name)}</span>
+            </div>
+            <div className="flex-1 h-6 bg-gray-100 rounded-full overflow-hidden relative">
+              <div
+                className="h-full rounded-full transition-all duration-500 flex items-center justify-end pr-1"
+                style={{ 
+                  width: `${percentage}%`,
+                  backgroundColor: stat.color
+                }}
+              >
+                {percentage > 10 && (
+                  <span className="text-[10px] font-medium text-white">{Math.round(percentage)}%</span>
+                )}
+              </div>
+              {percentage <= 10 && (
+              <span className="text-[10px] text-gray-400 ml-1">{Math.round(percentage)}%</span>
+            )}
+            </div>
+            <div className="w-12 text-right text-xs text-gray-600 flex-shrink-0">
+              {stat.count}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+// ============================================
+// GOALS SCREEN
+// ============================================
+
+const GoalsScreen = ({ goals, deeds, totalPoints, streak, onAddGoal, onDeleteGoal, onUpdateGoals }) => {
+  const t = useTranslation();
+  const { lang } = useContext(LanguageContext);
+  const [showCreateModal, setShowCreateModal] = useState(false);
+  
+  const activeGoals = goals.filter(g => !g.completed && (!g.endDate || new Date(g.endDate) >= new Date()));
+  const completedGoals = goals.filter(g => g.completed);
+  const expiredGoals = goals.filter(g => !g.completed && g.endDate && new Date(g.endDate) < new Date());
+  
+  const formatDate = (dateStr) => {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    return date.toLocaleDateString(lang === 'nl' ? 'nl-NL' : 'en-US', { 
+      day: 'numeric', 
+      month: 'short' 
+    });
+  };
+  
+  const getGoalName = (goal) => {
+    if (goal.type.includes('category')) {
+      return `${goal.target} ${t('deeds')} in ${t(`cat_${goal.category}`)} ${goal.period === 'week' ? t('thisWeek') : t('thisMonth')}`;
+    }
+    if (goal.type === 'streak_target') {
+      return `${t('goalType_streak_target')}: ${goal.target} ${t('dayStreak')}`;
+    }
+    return `${goal.target} ${goal.type.includes('points') ? t('points') : t('deeds')} ${goal.period === 'week' ? t('thisWeek') : goal.period === 'month' ? t('thisMonth') : ''}`;
+  };
+  
+  return (
+    <div className="px-4 pt-6 pb-32">
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-xl font-bold text-gray-800">🎯 {t('myGoals')}</h1>
+        <button
+          onClick={() => setShowCreateModal(true)}
+          className="bg-emerald-500 text-white px-4 py-2 rounded-xl font-medium text-sm shadow-sm hover:shadow-md transition-shadow"
+        >
+          + {t('newGoal')}
+        </button>
+      </div>
+      
+      {goals.length === 0 ? (
+        <div className="text-center py-12">
+          <div className="text-6xl mb-4">🎯</div>
+          <p className="text-gray-600 mb-2">{t('noGoals')}</p>
+          <p className="text-sm text-gray-500">{t('createFirstGoal')}</p>
+        </div>
+      ) : (
+        <>
+          {activeGoals.length > 0 && (
+            <div className="mb-6">
+              <h2 className="text-base font-bold text-gray-800 mb-3">{t('goalActive')}</h2>
+              <div className="space-y-3">
+                {activeGoals.map(goal => {
+                  const progress = (goal.current / goal.target) * 100;
+                  return (
+                    <div key={goal.id} className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-gray-800 text-sm mb-1">{getGoalName(goal)}</h3>
+                          {goal.endDate && (
+                            <p className="text-xs text-gray-500">{t('goalDeadline')}: {formatDate(goal.endDate)}</p>
+                          )}
+                        </div>
+                        <button
+                          onClick={() => onDeleteGoal(goal.id)}
+                          className="text-gray-400 hover:text-red-500 text-lg"
+                        >
+                          ×
+                        </button>
+                      </div>
+                      <div className="mt-3">
+                        <div className="flex justify-between text-xs mb-1">
+                          <span className="text-gray-600">{goal.current} / {goal.target}</span>
+                          <span className="text-gray-600">{Math.round(progress)}%</span>
+                        </div>
+                        <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full transition-all duration-500"
+                            style={{ width: `${progress}%` }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+          
+          {completedGoals.length > 0 && (
+            <div className="mb-6">
+              <h2 className="text-base font-bold text-gray-800 mb-3">{t('goalCompleted')}</h2>
+              <div className="space-y-2">
+                {completedGoals.map(goal => (
+                  <div key={goal.id} className="bg-emerald-50 rounded-xl p-3 border border-emerald-200">
+                    <div className="flex items-center justify-between">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="text-lg">✅</span>
+                          <span className="font-medium text-sm text-gray-800 line-through">{getGoalName(goal)}</span>
+                        </div>
+                        {goal.completedDate && (
+                          <p className="text-xs text-gray-500 mt-1">{formatDate(goal.completedDate)}</p>
+                        )}
+                      </div>
+                      <button
+                        onClick={() => onDeleteGoal(goal.id)}
+                        className="text-gray-400 hover:text-red-500 text-lg"
+                      >
+                        ×
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          {expiredGoals.length > 0 && (
+            <div>
+              <h2 className="text-base font-bold text-gray-800 mb-3">{t('goalExpired')}</h2>
+              <div className="space-y-2">
+                {expiredGoals.map(goal => (
+                  <div key={goal.id} className="bg-gray-50 rounded-xl p-3 border border-gray-200 opacity-60">
+                    <div className="flex items-center justify-between">
+                      <div className="flex-1">
+                        <span className="font-medium text-sm text-gray-600">{getGoalName(goal)}</span>
+                        {goal.endDate && (
+                          <p className="text-xs text-gray-500 mt-1">{t('goalDeadline')}: {formatDate(goal.endDate)}</p>
+                        )}
+                      </div>
+                      <button
+                        onClick={() => onDeleteGoal(goal.id)}
+                        className="text-gray-400 hover:text-red-500 text-lg"
+                      >
+                        ×
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
+      )}
+      
+      {showCreateModal && (
+        <CreateGoalModal
+          onSave={(goal) => {
+            onAddGoal(goal);
+            setShowCreateModal(false);
+          }}
+          onClose={() => setShowCreateModal(false)}
+        />
+      )}
+    </div>
+  );
+};
+
+const CreateGoalModal = ({ onSave, onClose }) => {
+  const t = useTranslation();
+  const [goalType, setGoalType] = useState('deeds_week');
+  const [target, setTarget] = useState(5);
+  const [period, setPeriod] = useState('week');
+  const [category, setCategory] = useState(null);
+  
+  const goalTypes = [
+    { value: 'deeds_week', label: t('goalType_deeds_week') },
+    { value: 'deeds_month', label: t('goalType_deeds_month') },
+    { value: 'deeds_continuous', label: t('goalType_deeds_continuous') },
+    { value: 'points_week', label: t('goalType_points_week') },
+    { value: 'points_month', label: t('goalType_points_month') },
+    { value: 'points_continuous', label: t('goalType_points_continuous') },
+    { value: 'category_week', label: t('goalType_category_week') },
+    { value: 'category_month', label: t('goalType_category_month') },
+    { value: 'streak_target', label: t('goalType_streak_target') },
+  ];
+  
+  const periods = [
+    { value: 'week', label: t('goalPeriod_week') },
+    { value: 'month', label: t('goalPeriod_month') },
+    { value: 'continuous', label: t('goalPeriod_continuous') },
+  ];
+  
+  const handleSave = () => {
+    const goal = createGoal(goalType, target, category, period);
+    onSave(goal);
+  };
+  
+  const needsCategory = goalType.includes('category');
+  const needsPeriod = !goalType.includes('continuous') && goalType !== 'streak_target';
+  
+  return (
+    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="bg-white rounded-2xl p-6 max-w-sm w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+        <h2 className="text-xl font-bold text-gray-800 mb-4">{t('createGoal')}</h2>
+        
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">{t('goalType')}</label>
+            <select
+              value={goalType}
+              onChange={(e) => {
+                setGoalType(e.target.value);
+                if (!e.target.value.includes('category')) setCategory(null);
+                if (e.target.value.includes('continuous') || e.target.value === 'streak_target') {
+                  setPeriod('continuous');
+                } else {
+                  setPeriod(goalType.includes('week') ? 'week' : 'month');
+                }
+              }}
+              className="w-full p-2 border border-gray-300 rounded-lg"
+            >
+              {goalTypes.map(type => (
+                <option key={type.value} value={type.value}>{type.label}</option>
+              ))}
+            </select>
+          </div>
+          
+          {needsCategory && (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">{t('goalCategory')}</label>
+              <select
+                value={category || ''}
+                onChange={(e) => setCategory(e.target.value)}
+                className="w-full p-2 border border-gray-300 rounded-lg"
+              >
+                <option value="">{t('category')}</option>
+                {CATEGORIES.map(cat => (
+                  <option key={cat.id} value={cat.id}>{cat.emoji} {t(cat.nameKey)}</option>
+                ))}
+              </select>
+            </div>
+          )}
+          
+          {needsPeriod && (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">{t('goalPeriod')}</label>
+              <select
+                value={period}
+                onChange={(e) => setPeriod(e.target.value)}
+                className="w-full p-2 border border-gray-300 rounded-lg"
+              >
+                {periods.filter(p => p.value !== 'continuous' || goalType.includes('continuous')).map(p => (
+                  <option key={p.value} value={p.value}>{p.label}</option>
+                ))}
+              </select>
+            </div>
+          )}
+          
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">{t('goalTarget')}</label>
+            <input
+              type="number"
+              min="1"
+              value={target}
+              onChange={(e) => setTarget(parseInt(e.target.value) || 1)}
+              className="w-full p-2 border border-gray-300 rounded-lg"
+            />
+          </div>
+        </div>
+        
+        <div className="flex gap-2 mt-6">
+          <button
+            onClick={onClose}
+            className="flex-1 py-2 bg-gray-100 rounded-xl font-medium text-gray-600"
+          >
+            {t('cancel')}
+          </button>
+          <button
+            onClick={handleSave}
+            disabled={needsCategory && !category}
+            className="flex-1 py-2 bg-emerald-500 text-white rounded-xl font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {t('saveGrow')}
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
@@ -2816,6 +4214,23 @@ export default function App() {
     const initialStreak = calculateStreak(deeds);
     return initialStreak.current;
   });
+  
+  // Achievements tracking
+  const [unlockedAchievementIds, setUnlockedAchievementIds] = useState(() => {
+    const saved = loadFromStorage(STORAGE_KEYS.ACHIEVEMENTS, []);
+    return new Set(saved);
+  });
+  
+  // Goals state
+  const [goals, setGoals] = useState(() => {
+    const saved = loadFromStorage(STORAGE_KEYS.GOALS, []);
+    return saved.map(goal => ({
+      ...goal,
+      // Ensure dates are strings
+      startDate: goal.startDate || getStartOfWeek(),
+      endDate: goal.endDate || null,
+    }));
+  });
 
   // Computed values
   const totalPoints = useMemo(() => deeds.reduce((sum, d) => sum + d.points, 0), [deeds]);
@@ -2827,6 +4242,28 @@ export default function App() {
   // Save to localStorage
   useEffect(() => { saveToStorage(STORAGE_KEYS.DEEDS, deeds); }, [deeds]);
   useEffect(() => { saveToStorage(STORAGE_KEYS.SETTINGS, { ...settings, lang }); }, [settings, lang]);
+  useEffect(() => { saveToStorage(STORAGE_KEYS.GOALS, goals); }, [goals]);
+  
+  // Update goals progress and reset for new periods
+  useEffect(() => {
+    const updatedGoals = updateGoalProgress(goals, deeds, totalPoints, streak);
+    const resetGoals = resetGoalsForNewPeriod(updatedGoals);
+    setGoals(resetGoals);
+    
+    // Check for goal completions and milestones
+    resetGoals.forEach(goal => {
+      const wasCompleted = goals.find(g => g.id === goal.id)?.completed;
+      if (goal.completed && !wasCompleted) {
+        setTimeout(() => showToast('goalCompletedToast', '🎉'), 500);
+      } else if (!goal.completed && goal.current >= goal.target * 0.5 && goal.current < goal.target * 0.6) {
+        // Show toast at 50% (only once)
+        const previousGoal = goals.find(g => g.id === goal.id);
+        if (!previousGoal || previousGoal.current < goal.target * 0.5) {
+          setTimeout(() => showToast('goalHalfwayToast', '💪'), 500);
+        }
+      }
+    });
+  }, [deeds, totalPoints, streak.current]);
   useEffect(() => {
     if (streak.current > 0) {
       const saved = loadFromStorage(STORAGE_KEYS.STREAK, { record: 0 });
@@ -2866,6 +4303,29 @@ export default function App() {
       setPreviousStreak(currentStreak);
     }
   }, [streak.current, previousStreak, showToast]);
+
+  // Check for new achievements
+  useEffect(() => {
+    const currentUnlocked = checkAchievements(deeds, totalPoints, stage, streak);
+    const currentIds = new Set(currentUnlocked.map(a => a.id));
+    const previousIds = unlockedAchievementIds;
+    
+    // Find newly unlocked achievements
+    const newlyUnlocked = currentUnlocked.filter(a => !previousIds.has(a.id));
+    
+    if (newlyUnlocked.length > 0) {
+      // Save updated achievements
+      setUnlockedAchievementIds(currentIds);
+      saveToStorage(STORAGE_KEYS.ACHIEVEMENTS, Array.from(currentIds));
+      
+      // Show toast for first new achievement
+      const firstNew = newlyUnlocked[0];
+      const achievementName = translations[lang]?.[firstNew.nameKey] || translations['en']?.[firstNew.nameKey] || firstNew.nameKey;
+      setTimeout(() => {
+        showToast(`🏆 ${achievementName}`, firstNew.emoji);
+      }, 500);
+    }
+  }, [deeds, totalPoints, stage.level, streak.current, unlockedAchievementIds, showToast, lang]);
 
   // Weather change timer - changes every 30-60 seconds
   useEffect(() => {
@@ -2949,9 +4409,19 @@ export default function App() {
   const handleResetData = () => {
     setDeeds([]);
     setLastLevel(1);
+    setGoals([]);
     saveToStorage(STORAGE_KEYS.DEEDS, []);
     saveToStorage(STORAGE_KEYS.LAST_LEVEL, 1);
     saveToStorage(STORAGE_KEYS.STREAK, { record: 0 });
+    saveToStorage(STORAGE_KEYS.GOALS, []);
+  };
+  
+  const handleAddGoal = (goal) => {
+    setGoals(prev => [...prev, goal]);
+  };
+  
+  const handleDeleteGoal = (goalId) => {
+    setGoals(prev => prev.filter(g => g.id !== goalId));
   };
 
   const handleAddDeed = (deed) => {
@@ -3002,6 +4472,7 @@ export default function App() {
           {activeTab === 'tree' && <TreeScreen totalPoints={totalPoints} weather={weather} showWeatherChange={showWeatherChange} />}
           {activeTab === 'calendar' && <CalendarScreen deeds={deeds} />}
           {activeTab === 'journey' && <JourneyScreen totalPoints={totalPoints} />}
+          {activeTab === 'goals' && <GoalsScreen goals={goals} deeds={deeds} totalPoints={totalPoints} streak={streak} onAddGoal={handleAddGoal} onDeleteGoal={handleDeleteGoal} onUpdateGoals={setGoals} />}
           {activeTab === 'profile' && <ProfileScreen totalPoints={totalPoints} deeds={deeds} stage={stage} settings={settings} setSettings={setSettings} onResetData={handleResetData} />}
 
           {!showAddDeed && <FAB onClick={() => setShowAddDeed(true)} />}
